@@ -4,9 +4,9 @@ import 'package:hololive_app/models/live_api_response/live_api_response.dart';
 import 'package:http/http.dart' as http;
 
 class HolotoolsApi {
-  static final String baseUrl = "api.holotools.app";
+  final String baseUrl = "api.holotools.app";
 
-  static Future<LiveApiResponse> getLive() async {
+  Future<LiveApiResponse> getLive() async {
     final params = {
       "max_upcoming_hours": 2190,
       "hide_channel_desc": 1,
