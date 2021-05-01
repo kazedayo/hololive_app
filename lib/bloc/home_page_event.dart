@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+part of 'home_page_bloc.dart';
 
 abstract class HomePageEvent extends Equatable {
   HomePageEvent();

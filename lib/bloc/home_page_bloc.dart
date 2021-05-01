@@ -1,7 +1,10 @@
 import 'package:bloc/bloc.dart';
-import 'package:hololive_app/bloc/home_page_event.dart';
-import 'package:hololive_app/bloc/home_page_state.dart';
+import 'package:equatable/equatable.dart';
+import 'package:hololive_app/models/live_api_response/live_api_response.dart';
 import 'package:hololive_app/repository/home_page_repository.dart';
+
+part 'home_page_event.dart';
+part 'home_page_state.dart';
 
 class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
   final HomePageRepository repository;
