@@ -41,7 +41,12 @@ class _HomePageState extends State<HomePage> {
               slivers: [
                 SliverAppBar(
                   actions: [
-                    IconButton(icon: Icon(Icons.menu), onPressed: () {})
+                    IconButton(
+                      icon: Icon(
+                        Icons.more_vert_rounded,
+                      ),
+                      onPressed: () {},
+                    ),
                   ],
                   pinned: true,
                   stretch: true,
