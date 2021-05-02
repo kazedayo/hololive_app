@@ -12,12 +12,16 @@ class HomePageInit extends HomePageState {}
 class HomePageLoading extends HomePageState {}
 
 class HomePageLoaded extends HomePageState {
-  final LiveApiResponse apiResponse;
+  final List<StreamVideoItem> liveList;
+  final List<StreamVideoItem> upcomingList;
 
-  HomePageLoaded({required this.apiResponse});
+  HomePageLoaded({
+    required this.liveList,
+    required this.upcomingList,
+  });
 
   @override
-  List<Object> get props => [apiResponse];
+  List<Object> get props => [liveList, upcomingList];
 }
 
 class HomePageError extends HomePageState {}

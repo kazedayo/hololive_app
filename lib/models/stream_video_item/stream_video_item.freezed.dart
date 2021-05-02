@@ -26,6 +26,7 @@ class _$StreamVideoItemTearOff {
       DateTime? live_end,
       DateTime? live_schedule,
       int? live_viewers,
+      required Channel channel,
       String? status,
       required String title,
       required String yt_video_key}) {
@@ -35,6 +36,7 @@ class _$StreamVideoItemTearOff {
       live_end: live_end,
       live_schedule: live_schedule,
       live_viewers: live_viewers,
+      channel: channel,
       status: status,
       title: title,
       yt_video_key: yt_video_key,
@@ -56,6 +58,7 @@ mixin _$StreamVideoItem {
   DateTime? get live_end => throw _privateConstructorUsedError;
   DateTime? get live_schedule => throw _privateConstructorUsedError;
   int? get live_viewers => throw _privateConstructorUsedError;
+  Channel get channel => throw _privateConstructorUsedError;
   String? get status => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get yt_video_key => throw _privateConstructorUsedError;
@@ -77,9 +80,12 @@ abstract class $StreamVideoItemCopyWith<$Res> {
       DateTime? live_end,
       DateTime? live_schedule,
       int? live_viewers,
+      Channel channel,
       String? status,
       String title,
       String yt_video_key});
+
+  $ChannelCopyWith<$Res> get channel;
 }
 
 /// @nodoc
@@ -98,6 +104,7 @@ class _$StreamVideoItemCopyWithImpl<$Res>
     Object? live_end = freezed,
     Object? live_schedule = freezed,
     Object? live_viewers = freezed,
+    Object? channel = freezed,
     Object? status = freezed,
     Object? title = freezed,
     Object? yt_video_key = freezed,
@@ -123,6 +130,10 @@ class _$StreamVideoItemCopyWithImpl<$Res>
           ? _value.live_viewers
           : live_viewers // ignore: cast_nullable_to_non_nullable
               as int?,
+      channel: channel == freezed
+          ? _value.channel
+          : channel // ignore: cast_nullable_to_non_nullable
+              as Channel,
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -136,6 +147,13 @@ class _$StreamVideoItemCopyWithImpl<$Res>
           : yt_video_key // ignore: cast_nullable_to_non_nullable
               as String,
     ));
+  }
+
+  @override
+  $ChannelCopyWith<$Res> get channel {
+    return $ChannelCopyWith<$Res>(_value.channel, (value) {
+      return _then(_value.copyWith(channel: value));
+    });
   }
 }
 
@@ -152,9 +170,13 @@ abstract class _$StreamVideoItemCopyWith<$Res>
       DateTime? live_end,
       DateTime? live_schedule,
       int? live_viewers,
+      Channel channel,
       String? status,
       String title,
       String yt_video_key});
+
+  @override
+  $ChannelCopyWith<$Res> get channel;
 }
 
 /// @nodoc
@@ -175,6 +197,7 @@ class __$StreamVideoItemCopyWithImpl<$Res>
     Object? live_end = freezed,
     Object? live_schedule = freezed,
     Object? live_viewers = freezed,
+    Object? channel = freezed,
     Object? status = freezed,
     Object? title = freezed,
     Object? yt_video_key = freezed,
@@ -200,6 +223,10 @@ class __$StreamVideoItemCopyWithImpl<$Res>
           ? _value.live_viewers
           : live_viewers // ignore: cast_nullable_to_non_nullable
               as int?,
+      channel: channel == freezed
+          ? _value.channel
+          : channel // ignore: cast_nullable_to_non_nullable
+              as Channel,
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -225,6 +252,7 @@ class _$_StreamVideoItem implements _StreamVideoItem {
       this.live_end,
       this.live_schedule,
       this.live_viewers,
+      required this.channel,
       this.status,
       required this.title,
       required this.yt_video_key});
@@ -243,6 +271,8 @@ class _$_StreamVideoItem implements _StreamVideoItem {
   @override
   final int? live_viewers;
   @override
+  final Channel channel;
+  @override
   final String? status;
   @override
   final String title;
@@ -251,7 +281,7 @@ class _$_StreamVideoItem implements _StreamVideoItem {
 
   @override
   String toString() {
-    return 'StreamVideoItem(id: $id, live_start: $live_start, live_end: $live_end, live_schedule: $live_schedule, live_viewers: $live_viewers, status: $status, title: $title, yt_video_key: $yt_video_key)';
+    return 'StreamVideoItem(id: $id, live_start: $live_start, live_end: $live_end, live_schedule: $live_schedule, live_viewers: $live_viewers, channel: $channel, status: $status, title: $title, yt_video_key: $yt_video_key)';
   }
 
   @override
@@ -272,6 +302,9 @@ class _$_StreamVideoItem implements _StreamVideoItem {
             (identical(other.live_viewers, live_viewers) ||
                 const DeepCollectionEquality()
                     .equals(other.live_viewers, live_viewers)) &&
+            (identical(other.channel, channel) ||
+                const DeepCollectionEquality()
+                    .equals(other.channel, channel)) &&
             (identical(other.status, status) ||
                 const DeepCollectionEquality().equals(other.status, status)) &&
             (identical(other.title, title) ||
@@ -289,6 +322,7 @@ class _$_StreamVideoItem implements _StreamVideoItem {
       const DeepCollectionEquality().hash(live_end) ^
       const DeepCollectionEquality().hash(live_schedule) ^
       const DeepCollectionEquality().hash(live_viewers) ^
+      const DeepCollectionEquality().hash(channel) ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(yt_video_key);
@@ -311,6 +345,7 @@ abstract class _StreamVideoItem implements StreamVideoItem {
       DateTime? live_end,
       DateTime? live_schedule,
       int? live_viewers,
+      required Channel channel,
       String? status,
       required String title,
       required String yt_video_key}) = _$_StreamVideoItem;
@@ -328,6 +363,8 @@ abstract class _StreamVideoItem implements StreamVideoItem {
   DateTime? get live_schedule => throw _privateConstructorUsedError;
   @override
   int? get live_viewers => throw _privateConstructorUsedError;
+  @override
+  Channel get channel => throw _privateConstructorUsedError;
   @override
   String? get status => throw _privateConstructorUsedError;
   @override

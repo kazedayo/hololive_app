@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hololive_app/models/channel/channel.dart';
 
 part 'stream_video_item.freezed.dart';
 part 'stream_video_item.g.dart';
@@ -11,6 +12,7 @@ class StreamVideoItem with _$StreamVideoItem {
     DateTime? live_end,
     DateTime? live_schedule,
     int? live_viewers,
+    required Channel channel,
     String? status,
     required String title,
     required String yt_video_key,

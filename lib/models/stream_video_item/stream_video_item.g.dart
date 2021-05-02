@@ -19,6 +19,7 @@ _$_StreamVideoItem _$_$_StreamVideoItemFromJson(Map<String, dynamic> json) {
         ? null
         : DateTime.parse(json['live_schedule'] as String),
     live_viewers: json['live_viewers'] as int?,
+    channel: Channel.fromJson(json['channel'] as Map<String, dynamic>),
     status: json['status'] as String?,
     title: json['title'] as String,
     yt_video_key: json['yt_video_key'] as String,
@@ -32,6 +33,7 @@ Map<String, dynamic> _$_$_StreamVideoItemToJson(_$_StreamVideoItem instance) =>
       'live_end': instance.live_end?.toIso8601String(),
       'live_schedule': instance.live_schedule?.toIso8601String(),
       'live_viewers': instance.live_viewers,
+      'channel': instance.channel,
       'status': instance.status,
       'title': instance.title,
       'yt_video_key': instance.yt_video_key,

@@ -20,9 +20,10 @@ class MyApp extends StatelessWidget {
         ),
         child: MaterialApp(
           title: 'Hololive App',
-          theme: ThemeData(
-            primarySwatch: Colors.cyan,
-          ),
+          theme: ThemeData.from(
+              colorScheme: ColorScheme.light()
+                  .copyWith(primary: Colors.white, onPrimary: Colors.black)),
+          darkTheme: ThemeData.from(colorScheme: ColorScheme.dark()),
           home: HomePage(),
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:hololive_app/models/live_api_response/live_api_response.dart';
+import 'package:hololive_app/models/stream_video_item/stream_video_item.dart';
 import 'package:hololive_app/repository/home_page_repository.dart';
 
 part 'home_page_event.dart';
@@ -15,8 +15,9 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
   Stream<HomePageState> mapEventToState(HomePageEvent event) async* {
     if (event is RequestLiveList) {
       try {
-        final response = await repository.getList();
-        yield HomePageLoaded(apiResponse: response);
+        final live = await repository.getLiveList();
+        final upcoming = await repository.getUpcomingList();
+        yield HomePageLoaded(liveList: live, upcomingList: upcoming);
       } catch (e) {
         yield HomePageError();
       }
