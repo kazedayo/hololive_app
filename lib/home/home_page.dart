@@ -73,9 +73,6 @@ class _HomePageState extends State<HomePage> {
                           'Live Now',
                           style: Theme.of(context).textTheme.headline5,
                         ),
-                        SizedBox(
-                          width: 4,
-                        ),
                         Lottie.asset(
                           'assets/pulse.json',
                           width: 40,
