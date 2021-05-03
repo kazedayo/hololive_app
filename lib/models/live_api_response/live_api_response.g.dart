@@ -9,14 +9,14 @@ part of 'live_api_response.dart';
 _$_LiveApiResponse _$_$_LiveApiResponseFromJson(Map<String, dynamic> json) {
   return _$_LiveApiResponse(
     cached: json['cached'] as bool,
-    ended: (json['ended'] as List<dynamic>?)
-        ?.map((e) => StreamVideoItem.fromJson(e as Map<String, dynamic>))
+    ended: (json['ended'] as List<dynamic>)
+        .map((e) => StreamVideoItem.fromJson(e as Map<String, dynamic>))
         .toList(),
-    live: (json['live'] as List<dynamic>?)
-        ?.map((e) => StreamVideoItem.fromJson(e as Map<String, dynamic>))
+    live: (json['live'] as List<dynamic>)
+        .map((e) => StreamVideoItem.fromJson(e as Map<String, dynamic>))
         .toList(),
-    upcoming: (json['upcoming'] as List<dynamic>?)
-        ?.map((e) => StreamVideoItem.fromJson(e as Map<String, dynamic>))
+    upcoming: (json['upcoming'] as List<dynamic>)
+        .map((e) => StreamVideoItem.fromJson(e as Map<String, dynamic>))
         .toList(),
   );
 }

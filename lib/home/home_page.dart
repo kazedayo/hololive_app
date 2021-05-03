@@ -8,6 +8,9 @@ import 'package:hololive_app/home/widgets/video_card.dart';
 import 'package:hololive_app/models/stream_video_item/stream_video_item.dart';
 import 'package:lottie/lottie.dart';
 
+part 'widgets/live_sliver_list.dart';
+part 'widgets/upcoming_sliver_list.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -18,8 +21,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    _refreshTimer = Timer.periodic(Duration(minutes: 1), (timer) {
-      BlocProvider.of<HomePageBloc>(context).add(RequestLiveList());
+    _refreshTimer = Timer.periodic(const Duration(minutes: 1), (timer) {
+      BlocProvider.of<HomePageBloc>(context).add(const RequestLiveList());
     });
     super.initState();
   }
@@ -32,7 +35,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<HomePageBloc>(context).add(RequestLiveList());
+    BlocProvider.of<HomePageBloc>(context).add(const RequestLiveList());
     return Scaffold(
       body: BlocBuilder<HomePageBloc, HomePageState>(
         builder: (context, state) {
@@ -42,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                 SliverAppBar(
                   actions: [
                     IconButton(
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.more_vert_rounded,
                       ),
                       onPressed: () {},
@@ -52,72 +55,24 @@ class _HomePageState extends State<HomePage> {
                   stretch: true,
                   expandedHeight: 100,
                   elevation: 4,
-                  flexibleSpace: FlexibleSpaceBar(
+                  flexibleSpace: const FlexibleSpaceBar(
                     centerTitle: false,
-                    title: Text('Home'),
+                    title: Text('HoloSchedule'),
                     titlePadding: EdgeInsetsDirectional.only(
                       start: 16,
                       bottom: 16,
                     ),
                   ),
                 ),
-                SliverToBoxAdapter(
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                      left: 16.0,
-                      bottom: 8,
-                    ),
-                    child: Row(
-                      children: [
-                        Text(
-                          'Live Now',
-                          style: Theme.of(context).textTheme.headline5,
-                        ),
-                        Lottie.asset(
-                          'assets/pulse.json',
-                          width: 40,
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                      StreamVideoItem item = state.liveList[index];
-                      return VideoCard(item: item);
-                    },
-                    childCount: state.liveList.length,
-                  ),
-                ),
-                SliverToBoxAdapter(
-                  child: Container(
-                    margin: EdgeInsets.only(
-                      left: 16,
-                      top: 48,
-                      bottom: 16,
-                    ),
-                    child: Text(
-                      'Upcoming Streams',
-                      style: Theme.of(context).textTheme.headline5,
-                    ),
-                  ),
-                ),
-                SliverList(
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) {
-                      StreamVideoItem item = state.upcomingList[index];
-                      return VideoCard(item: item);
-                    },
-                    childCount: state.upcomingList.length,
-                  ),
-                ),
+                ...?buildLiveSliverList(context, state),
+                ...buildUpcomingSliverList(context, state),
               ],
             );
+          } else {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
           }
-          return Center(
-            child: CircularProgressIndicator(),
-          );
         },
       ),
     );

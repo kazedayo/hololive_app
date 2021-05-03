@@ -2,7 +2,7 @@
     package="com.example.hololive_app">
     <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="hololive_app"
+        android:label="HoloSchedule"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

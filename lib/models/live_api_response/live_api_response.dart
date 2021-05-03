@@ -8,9 +8,9 @@ part 'live_api_response.g.dart';
 class LiveApiResponse with _$LiveApiResponse {
   factory LiveApiResponse(
       {required bool cached,
-      List<StreamVideoItem>? ended,
-      List<StreamVideoItem>? live,
-      List<StreamVideoItem>? upcoming}) = _LiveApiResponse;
+      required List<StreamVideoItem> ended,
+      required List<StreamVideoItem> live,
+      required List<StreamVideoItem> upcoming}) = _LiveApiResponse;
 
   factory LiveApiResponse.fromJson(Map<String, dynamic> json) =>
       _$LiveApiResponseFromJson(json);

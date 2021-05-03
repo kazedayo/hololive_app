@@ -22,9 +22,9 @@ class _$LiveApiResponseTearOff {
 
   _LiveApiResponse call(
       {required bool cached,
-      List<StreamVideoItem>? ended,
-      List<StreamVideoItem>? live,
-      List<StreamVideoItem>? upcoming}) {
+      required List<StreamVideoItem> ended,
+      required List<StreamVideoItem> live,
+      required List<StreamVideoItem> upcoming}) {
     return _LiveApiResponse(
       cached: cached,
       ended: ended,
@@ -44,9 +44,9 @@ const $LiveApiResponse = _$LiveApiResponseTearOff();
 /// @nodoc
 mixin _$LiveApiResponse {
   bool get cached => throw _privateConstructorUsedError;
-  List<StreamVideoItem>? get ended => throw _privateConstructorUsedError;
-  List<StreamVideoItem>? get live => throw _privateConstructorUsedError;
-  List<StreamVideoItem>? get upcoming => throw _privateConstructorUsedError;
+  List<StreamVideoItem> get ended => throw _privateConstructorUsedError;
+  List<StreamVideoItem> get live => throw _privateConstructorUsedError;
+  List<StreamVideoItem> get upcoming => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -61,9 +61,9 @@ abstract class $LiveApiResponseCopyWith<$Res> {
       _$LiveApiResponseCopyWithImpl<$Res>;
   $Res call(
       {bool cached,
-      List<StreamVideoItem>? ended,
-      List<StreamVideoItem>? live,
-      List<StreamVideoItem>? upcoming});
+      List<StreamVideoItem> ended,
+      List<StreamVideoItem> live,
+      List<StreamVideoItem> upcoming});
 }
 
 /// @nodoc
@@ -90,15 +90,15 @@ class _$LiveApiResponseCopyWithImpl<$Res>
       ended: ended == freezed
           ? _value.ended
           : ended // ignore: cast_nullable_to_non_nullable
-              as List<StreamVideoItem>?,
+              as List<StreamVideoItem>,
       live: live == freezed
           ? _value.live
           : live // ignore: cast_nullable_to_non_nullable
-              as List<StreamVideoItem>?,
+              as List<StreamVideoItem>,
       upcoming: upcoming == freezed
           ? _value.upcoming
           : upcoming // ignore: cast_nullable_to_non_nullable
-              as List<StreamVideoItem>?,
+              as List<StreamVideoItem>,
     ));
   }
 }
@@ -112,9 +112,9 @@ abstract class _$LiveApiResponseCopyWith<$Res>
   @override
   $Res call(
       {bool cached,
-      List<StreamVideoItem>? ended,
-      List<StreamVideoItem>? live,
-      List<StreamVideoItem>? upcoming});
+      List<StreamVideoItem> ended,
+      List<StreamVideoItem> live,
+      List<StreamVideoItem> upcoming});
 }
 
 /// @nodoc
@@ -143,15 +143,15 @@ class __$LiveApiResponseCopyWithImpl<$Res>
       ended: ended == freezed
           ? _value.ended
           : ended // ignore: cast_nullable_to_non_nullable
-              as List<StreamVideoItem>?,
+              as List<StreamVideoItem>,
       live: live == freezed
           ? _value.live
           : live // ignore: cast_nullable_to_non_nullable
-              as List<StreamVideoItem>?,
+              as List<StreamVideoItem>,
       upcoming: upcoming == freezed
           ? _value.upcoming
           : upcoming // ignore: cast_nullable_to_non_nullable
-              as List<StreamVideoItem>?,
+              as List<StreamVideoItem>,
     ));
   }
 }
@@ -160,7 +160,10 @@ class __$LiveApiResponseCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_LiveApiResponse implements _LiveApiResponse {
   _$_LiveApiResponse(
-      {required this.cached, this.ended, this.live, this.upcoming});
+      {required this.cached,
+      required this.ended,
+      required this.live,
+      required this.upcoming});
 
   factory _$_LiveApiResponse.fromJson(Map<String, dynamic> json) =>
       _$_$_LiveApiResponseFromJson(json);
@@ -168,11 +171,11 @@ class _$_LiveApiResponse implements _LiveApiResponse {
   @override
   final bool cached;
   @override
-  final List<StreamVideoItem>? ended;
+  final List<StreamVideoItem> ended;
   @override
-  final List<StreamVideoItem>? live;
+  final List<StreamVideoItem> live;
   @override
-  final List<StreamVideoItem>? upcoming;
+  final List<StreamVideoItem> upcoming;
 
   @override
   String toString() {
@@ -216,9 +219,9 @@ class _$_LiveApiResponse implements _LiveApiResponse {
 abstract class _LiveApiResponse implements LiveApiResponse {
   factory _LiveApiResponse(
       {required bool cached,
-      List<StreamVideoItem>? ended,
-      List<StreamVideoItem>? live,
-      List<StreamVideoItem>? upcoming}) = _$_LiveApiResponse;
+      required List<StreamVideoItem> ended,
+      required List<StreamVideoItem> live,
+      required List<StreamVideoItem> upcoming}) = _$_LiveApiResponse;
 
   factory _LiveApiResponse.fromJson(Map<String, dynamic> json) =
       _$_LiveApiResponse.fromJson;
@@ -226,11 +229,11 @@ abstract class _LiveApiResponse implements LiveApiResponse {
   @override
   bool get cached => throw _privateConstructorUsedError;
   @override
-  List<StreamVideoItem>? get ended => throw _privateConstructorUsedError;
+  List<StreamVideoItem> get ended => throw _privateConstructorUsedError;
   @override
-  List<StreamVideoItem>? get live => throw _privateConstructorUsedError;
+  List<StreamVideoItem> get live => throw _privateConstructorUsedError;
   @override
-  List<StreamVideoItem>? get upcoming => throw _privateConstructorUsedError;
+  List<StreamVideoItem> get upcoming => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$LiveApiResponseCopyWith<_LiveApiResponse> get copyWith =>
