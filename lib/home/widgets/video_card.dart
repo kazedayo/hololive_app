@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:hololive_app/generated/l10n.dart';
 import 'package:hololive_app/models/stream_video_item/stream_video_item.dart';
@@ -42,10 +43,10 @@ class VideoCard extends StatelessWidget {
               children: [
                 AspectRatio(
                   aspectRatio: 1.78,
-                  child: FadeInImage.memoryNetwork(
-                    placeholder: kTransparentImage,
-                    image:
-                        "https://img.youtube.com/vi/${item.yt_video_key}/hqdefault.jpg",
+                  child: FadeInImage(
+                    placeholder: MemoryImage(kTransparentImage),
+                    image: CachedNetworkImageProvider(
+                        "https://img.youtube.com/vi/${item.yt_video_key}/hqdefault.jpg"),
                     fit: BoxFit.cover,
                     fadeInDuration: const Duration(milliseconds: 200),
                   ),
@@ -86,9 +87,9 @@ class VideoCard extends StatelessWidget {
                     height: 40,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(25),
-                      child: FadeInImage.memoryNetwork(
-                        placeholder: kTransparentImage,
-                        image: item.channel.photo,
+                      child: FadeInImage(
+                        placeholder: MemoryImage(kTransparentImage),
+                        image: CachedNetworkImageProvider(item.channel.photo),
                         fadeInDuration: const Duration(milliseconds: 200),
                       ),
                     ),
