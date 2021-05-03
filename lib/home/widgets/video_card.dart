@@ -109,7 +109,7 @@ class VideoCard extends StatelessWidget {
                           item.channel.name,
                           style: Theme.of(context).textTheme.caption,
                         ),
-                        if (isLive)
+                        if (isLive && item.live_viewers != null)
                           Text(
                             S.of(context).watching(
                                   NumberFormat.compact()
