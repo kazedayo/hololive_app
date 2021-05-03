@@ -8,5 +8,6 @@
     "thisWeek": "這個星期",
     "goingLive": "準備開始",
     "liveIn" : "{time}開始",
-    "noScheduledStream": "沒有即將開始的直播_(:3 」∠)_"
+    "noScheduledStream": "沒有即將開始的直播_(:3 」∠)_",
+    "watching": "{number}人正在觀看"
 }

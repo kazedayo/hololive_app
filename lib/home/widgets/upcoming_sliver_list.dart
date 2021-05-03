@@ -41,14 +41,17 @@ List<Widget> buildUpcomingSliverList(
     ),
     () {
       if (state.upcomingList.isEmpty) {
-        return SliverPadding(
-          padding: const EdgeInsets.only(bottom: 16),
-          sliver: SliverToBoxAdapter(
-            child: Center(
-              child: Text(
-                S.of(context).noScheduledStream,
-                style: const TextStyle(
-                  color: Colors.grey,
+        return SliverSafeArea(
+          top: false,
+          sliver: SliverPadding(
+            padding: const EdgeInsets.only(bottom: 16),
+            sliver: SliverToBoxAdapter(
+              child: Center(
+                child: Text(
+                  S.of(context).noScheduledStream,
+                  style: const TextStyle(
+                    color: Colors.grey,
+                  ),
                 ),
               ),
             ),

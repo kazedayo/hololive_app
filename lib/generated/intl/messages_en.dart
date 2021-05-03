@@ -23,6 +23,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(time) => "Started ${time}";
 
+  static String m2(number) => "${number} watching";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "goingLive": MessageLookupByLibrary.simpleMessage("Going Live"),
@@ -35,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "No Scheduled Streams_(:3 」∠)_"),
         "thisWeek": MessageLookupByLibrary.simpleMessage("This Week"),
         "today": MessageLookupByLibrary.simpleMessage("Today"),
-        "upcoming": MessageLookupByLibrary.simpleMessage("Upcoming Streams")
+        "upcoming": MessageLookupByLibrary.simpleMessage("Upcoming Streams"),
+        "watching": m2
       };
 }

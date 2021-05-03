@@ -149,6 +149,16 @@ class S {
       args: [],
     );
   }
+
+  /// `{number} watching`
+  String watching(Object number) {
+    return Intl.message(
+      '$number watching',
+      name: 'watching',
+      desc: '',
+      args: [number],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

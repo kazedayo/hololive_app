@@ -108,6 +108,17 @@ class VideoCard extends StatelessWidget {
                           item.channel.name,
                           style: Theme.of(context).textTheme.caption,
                         ),
+                        if (isLive)
+                          Text(
+                            S.of(context).watching(
+                                  NumberFormat.compact()
+                                      .format(item.live_viewers),
+                                ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .caption!
+                                .copyWith(color: Colors.redAccent),
+                          ),
                       ],
                     ),
                   ),

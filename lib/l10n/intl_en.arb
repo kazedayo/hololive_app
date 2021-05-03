@@ -8,5 +8,6 @@
     "thisWeek": "This Week",
     "goingLive": "Going Live",
     "liveIn" : "Live {time}",
-    "noScheduledStream": "No Scheduled Streams_(:3 」∠)_"
+    "noScheduledStream": "No Scheduled Streams_(:3 」∠)_",
+    "watching": "{number} watching"
 }

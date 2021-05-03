@@ -23,6 +23,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(time) => "${time}開始";
 
+  static String m2(number) => "${number}人正在觀看";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "goingLive": MessageLookupByLibrary.simpleMessage("準備開始"),
@@ -35,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("沒有即將開始的直播_(:3 」∠)_"),
         "thisWeek": MessageLookupByLibrary.simpleMessage("這個星期"),
         "today": MessageLookupByLibrary.simpleMessage("今日"),
-        "upcoming": MessageLookupByLibrary.simpleMessage("即將開始的直播")
+        "upcoming": MessageLookupByLibrary.simpleMessage("即將開始的直播"),
+        "watching": m2
       };
 }
