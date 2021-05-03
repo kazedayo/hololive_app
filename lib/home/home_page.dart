@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hololive_app/bloc/home_page_bloc.dart';
+import 'package:hololive_app/generated/l10n.dart';
 import 'package:hololive_app/home/widgets/video_card.dart';
 import 'package:hololive_app/models/stream_video_item/stream_video_item.dart';
 import 'package:lottie/lottie.dart';

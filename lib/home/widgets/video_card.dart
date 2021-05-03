@@ -1,8 +1,10 @@
-import 'package:date_time_format/date_time_format.dart';
 import 'package:flutter/material.dart';
+import 'package:hololive_app/generated/l10n.dart';
 import 'package:hololive_app/models/stream_video_item/stream_video_item.dart';
+import 'package:jiffy/jiffy.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:intl/intl.dart';
 
 class VideoCard extends StatelessWidget {
   const VideoCard({
@@ -16,6 +18,7 @@ class VideoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Jiffy.locale(Intl.getCurrentLocale());
     return Card(
       clipBehavior: Clip.antiAlias,
       elevation: 6,
@@ -58,16 +61,16 @@ class VideoCard extends StatelessWidget {
                     ),
                     child: Text(
                       isLive
-                          ? "Started ${item.live_start!.relative(
-                              to: DateTime.now(),
-                              abbr: true,
-                              appendIfAfter: "ago",
-                            )}"
-                          : item.live_schedule!.relative(
-                              to: DateTime.now(),
-                              abbr: true,
-                              prependIfBefore: "Live in",
-                            ),
+                          ? item.live_start == null
+                              ? S.of(context).justStarted
+                              : S.of(context).liveTime(
+                                    Jiffy(item.live_start).fromNow(),
+                                  )
+                          : item.live_schedule == null
+                              ? S.of(context).goingLive
+                              : S.of(context).liveIn(
+                                    Jiffy(item.live_schedule).fromNow(),
+                                  ),
                       style: const TextStyle(color: Colors.white),
                     ),
                   ),

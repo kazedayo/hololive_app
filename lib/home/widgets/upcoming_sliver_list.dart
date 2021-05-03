@@ -9,7 +9,7 @@ List<Widget> buildUpcomingSliverList(
         child: Row(
           children: [
             Text(
-              'Upcoming Streams',
+              S.of(context).upcoming,
               style: Theme.of(context).textTheme.headline5,
             ),
             const Spacer(),
@@ -20,18 +20,18 @@ List<Widget> buildUpcomingSliverList(
                 BlocProvider.of<HomePageBloc>(context)
                     .add(UpdateFilter(filter: value!));
               },
-              items: const [
+              items: [
                 DropdownMenuItem(
                   value: UpcomingFilter.hour,
-                  child: Text('Next hour'),
+                  child: Text(S.of(context).nextHour),
                 ),
                 DropdownMenuItem(
                   value: UpcomingFilter.day,
-                  child: Text('Today'),
+                  child: Text(S.of(context).today),
                 ),
                 DropdownMenuItem(
                   value: UpcomingFilter.week,
-                  child: Text('This week'),
+                  child: Text(S.of(context).thisWeek),
                 ),
               ],
             ),
@@ -41,12 +41,15 @@ List<Widget> buildUpcomingSliverList(
     ),
     () {
       if (state.upcomingList.isEmpty) {
-        return const SliverToBoxAdapter(
-          child: Center(
-            child: Text(
-              'No Scheduled Streams.',
-              style: TextStyle(
-                color: Colors.grey,
+        return SliverPadding(
+          padding: const EdgeInsets.only(bottom: 16),
+          sliver: SliverToBoxAdapter(
+            child: Center(
+              child: Text(
+                S.of(context).noScheduledStream,
+                style: const TextStyle(
+                  color: Colors.grey,
+                ),
               ),
             ),
           ),

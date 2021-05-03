@@ -1,0 +1,12 @@
+{
+    "live": "Live Now",
+    "justStarted": "justStarted",
+    "liveTime": "Started {time}",
+    "upcoming": "Upcoming Streams",
+    "nextHour": "Next Hour",
+    "today": "Today",
+    "thisWeek": "This Week",
+    "goingLive": "Going Live",
+    "liveIn" : "Live {time}",
+    "noScheduledStream": "No Scheduled Streams_(:3 」∠)_"
+}

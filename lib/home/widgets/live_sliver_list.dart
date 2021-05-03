@@ -12,7 +12,7 @@ List<Widget>? buildLiveSliverList(BuildContext context, HomePageLoaded state) {
           child: Row(
             children: [
               Text(
-                'Live Now',
+                S.of(context).live,
                 style: Theme.of(context).textTheme.headline5,
               ),
               Lottie.asset(

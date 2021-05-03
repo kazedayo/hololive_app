@@ -1,0 +1,12 @@
+{
+    "live": "正在直播",
+    "justStarted": "剛剛開始",
+    "liveTime": "{time}開始",
+    "upcoming": "即將開始的直播",
+    "nextHour": "一小時內",
+    "today": "今日",
+    "thisWeek": "這個星期",
+    "goingLive": "準備開始",
+    "liveIn" : "{time}開始",
+    "noScheduledStream": "沒有即將開始的直播_(:3 」∠)_"
+}

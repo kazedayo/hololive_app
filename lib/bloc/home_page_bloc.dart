@@ -19,8 +19,8 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
         final LiveApiResponse response =
             await repository.getSchedule(filter: event.filter);
         final live = response.live
-          ..sort((a, b) => (a.live_start ?? DateTime.now())
-              .compareTo(b.live_start ?? DateTime.now()));
+          ..sort((a, b) => (b.live_start ?? DateTime.now())
+              .compareTo(a.live_start ?? DateTime.now()));
         final upcoming = response.upcoming
           ..sort((a, b) => (a.live_schedule ?? DateTime.now())
               .compareTo(b.live_schedule ?? DateTime.now()));
