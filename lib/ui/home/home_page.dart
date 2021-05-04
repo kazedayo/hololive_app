@@ -51,26 +51,16 @@ class _HomePageState extends State<HomePage> {
                       itemBuilder: (context) => [
                         PopupMenuItem(
                           value: 0,
-                          child: Row(
-                            children: [
-                              const Icon(Icons.copyright),
-                              const SizedBox(
-                                width: 8,
-                              ),
-                              Text(S.of(context).copyright),
-                            ],
+                          child: ListTile(
+                            leading: const Icon(Icons.copyright),
+                            title: Text(S.of(context).copyright),
                           ),
                         ),
                         PopupMenuItem(
                           value: 1,
-                          child: Row(
-                            children: [
-                              const Icon(Icons.code_rounded),
-                              const SizedBox(
-                                width: 8,
-                              ),
-                              Text(S.of(context).source),
-                            ],
+                          child: ListTile(
+                            leading: const Icon(Icons.code_rounded),
+                            title: Text(S.of(context).source),
                           ),
                         ),
                       ],
