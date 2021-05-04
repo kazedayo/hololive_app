@@ -9,5 +9,11 @@
     "goingLive": "準備開始",
     "liveIn" : "{time}開始",
     "noScheduledStream": "沒有即將開始的直播_(:3 」∠)_",
-    "watching": "{number}人正在觀看"
+    "watching": "{number}人正在觀看",
+    "streamStartNotiTilte": "直播要開始了!!",
+    "streamStartNoti": "{channel}的直播{streamTitle}快要開始了!",
+    "getNotified": "取得通知",
+    "notiOn": "已打開通知",
+    "copyright": "授權資訊",
+    "source": "查看源代碼"
 }

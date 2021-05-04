@@ -27,9 +27,12 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc:
+  flutter_local_notifications: 
   flutter_localizations:
     sdk: flutter
   freezed_annotation: 
+  hive:
+  hive_flutter:
   http: 
   intl: 
   jiffy: 

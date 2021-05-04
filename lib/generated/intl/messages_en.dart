@@ -23,21 +23,31 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(time) => "Started ${time}";
 
-  static String m2(number) => "${number} watching";
+  static String m2(channel, streamTitle) =>
+      "${channel}\'s stream ${streamTitle} is starting now!";
+
+  static String m3(number) => "${number} watching";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "copyright": MessageLookupByLibrary.simpleMessage("Licences"),
+        "getNotified": MessageLookupByLibrary.simpleMessage("Get Notified"),
         "goingLive": MessageLookupByLibrary.simpleMessage("Going Live"),
-        "justStarted": MessageLookupByLibrary.simpleMessage("justStarted"),
+        "justStarted": MessageLookupByLibrary.simpleMessage("Just Started"),
         "live": MessageLookupByLibrary.simpleMessage("Live Now"),
         "liveIn": m0,
         "liveTime": m1,
         "nextHour": MessageLookupByLibrary.simpleMessage("Next Hour"),
         "noScheduledStream": MessageLookupByLibrary.simpleMessage(
             "No Scheduled Streams_(:3 」∠)_"),
+        "notiOn": MessageLookupByLibrary.simpleMessage("Notification On"),
+        "source": MessageLookupByLibrary.simpleMessage("Source Code"),
+        "streamStartNoti": m2,
+        "streamStartNotiTilte":
+            MessageLookupByLibrary.simpleMessage("Stream starting!!"),
         "thisWeek": MessageLookupByLibrary.simpleMessage("This Week"),
         "today": MessageLookupByLibrary.simpleMessage("Today"),
         "upcoming": MessageLookupByLibrary.simpleMessage("Upcoming Streams"),
-        "watching": m2
+        "watching": m3
       };
 }

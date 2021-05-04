@@ -65,6 +65,7 @@ List<Widget> buildUpcomingSliverList(
               (context, index) {
                 final StreamVideoItem item = state.upcomingList[index];
                 return VideoCard(
+                  key: PageStorageKey(item.yt_video_key),
                   item: item,
                   isLive: false,
                 );

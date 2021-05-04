@@ -30,6 +30,7 @@ List<Widget>? buildLiveSliverList(BuildContext context, HomePageLoaded state) {
             (context, index) {
               final StreamVideoItem item = state.liveList[index];
               return VideoCard(
+                key: PageStorageKey(item.yt_video_key),
                 item: item,
                 isLive: true,
               );

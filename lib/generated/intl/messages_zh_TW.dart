@@ -23,10 +23,14 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m1(time) => "${time}開始";
 
-  static String m2(number) => "${number}人正在觀看";
+  static String m2(channel, streamTitle) => "${channel}的直播${streamTitle}快要開始了!";
+
+  static String m3(number) => "${number}人正在觀看";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "copyright": MessageLookupByLibrary.simpleMessage("授權資訊"),
+        "getNotified": MessageLookupByLibrary.simpleMessage("取得通知"),
         "goingLive": MessageLookupByLibrary.simpleMessage("準備開始"),
         "justStarted": MessageLookupByLibrary.simpleMessage("剛剛開始"),
         "live": MessageLookupByLibrary.simpleMessage("正在直播"),
@@ -35,9 +39,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "nextHour": MessageLookupByLibrary.simpleMessage("一小時內"),
         "noScheduledStream":
             MessageLookupByLibrary.simpleMessage("沒有即將開始的直播_(:3 」∠)_"),
+        "notiOn": MessageLookupByLibrary.simpleMessage("已打開通知"),
+        "source": MessageLookupByLibrary.simpleMessage("查看源代碼"),
+        "streamStartNoti": m2,
+        "streamStartNotiTilte":
+            MessageLookupByLibrary.simpleMessage("直播要開始了!!"),
         "thisWeek": MessageLookupByLibrary.simpleMessage("這個星期"),
         "today": MessageLookupByLibrary.simpleMessage("今日"),
         "upcoming": MessageLookupByLibrary.simpleMessage("即將開始的直播"),
-        "watching": m2
+        "watching": m3
       };
 }

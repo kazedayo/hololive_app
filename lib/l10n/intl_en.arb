@@ -1,6 +1,6 @@
 {
     "live": "Live Now",
-    "justStarted": "justStarted",
+    "justStarted": "Just Started",
     "liveTime": "Started {time}",
     "upcoming": "Upcoming Streams",
     "nextHour": "Next Hour",
@@ -9,5 +9,11 @@
     "goingLive": "Going Live",
     "liveIn" : "Live {time}",
     "noScheduledStream": "No Scheduled Streams_(:3 」∠)_",
-    "watching": "{number} watching"
+    "watching": "{number} watching",
+    "streamStartNotiTilte": "Stream starting!!",
+    "streamStartNoti": "{channel}'s stream {streamTitle} is starting now!",
+    "getNotified": "Get Notified",
+    "notiOn": "Notification On",
+    "copyright": "Licences",
+    "source": "Source Code"
 }

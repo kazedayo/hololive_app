@@ -60,10 +60,10 @@ class S {
     );
   }
 
-  /// `justStarted`
+  /// `Just Started`
   String get justStarted {
     return Intl.message(
-      'justStarted',
+      'Just Started',
       name: 'justStarted',
       desc: '',
       args: [],
@@ -157,6 +157,66 @@ class S {
       name: 'watching',
       desc: '',
       args: [number],
+    );
+  }
+
+  /// `Stream starting!!`
+  String get streamStartNotiTilte {
+    return Intl.message(
+      'Stream starting!!',
+      name: 'streamStartNotiTilte',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{channel}'s stream {streamTitle} is starting now!`
+  String streamStartNoti(Object channel, Object streamTitle) {
+    return Intl.message(
+      '$channel\'s stream $streamTitle is starting now!',
+      name: 'streamStartNoti',
+      desc: '',
+      args: [channel, streamTitle],
+    );
+  }
+
+  /// `Get Notified`
+  String get getNotified {
+    return Intl.message(
+      'Get Notified',
+      name: 'getNotified',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification On`
+  String get notiOn {
+    return Intl.message(
+      'Notification On',
+      name: 'notiOn',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Licences`
+  String get copyright {
+    return Intl.message(
+      'Licences',
+      name: 'copyright',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Source Code`
+  String get source {
+    return Intl.message(
+      'Source Code',
+      name: 'source',
+      desc: '',
+      args: [],
     );
   }
 }
