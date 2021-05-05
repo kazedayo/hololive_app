@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hololive_app/bloc/home_page_bloc.dart';
@@ -36,12 +37,25 @@ class MyApp extends StatelessWidget {
           supportedLocales: S.delegate.supportedLocales,
           title: 'Hololive App',
           theme: ThemeData.from(
-                  colorScheme: const ColorScheme.light()
-                      .copyWith(primary: Colors.white, onPrimary: Colors.black))
-              .copyWith(
-                  textButtonTheme: TextButtonThemeData(
-                      style: TextButton.styleFrom(primary: Colors.black))),
-          darkTheme: ThemeData.from(colorScheme: const ColorScheme.dark()),
+            colorScheme: const ColorScheme.light().copyWith(
+              primary: Colors.white,
+              onPrimary: Colors.black,
+              secondary: Colors.blue[200],
+              secondaryVariant: Colors.blue[400],
+            ),
+          ).copyWith(
+            textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(primary: Colors.black),
+            ),
+          ),
+          darkTheme: ThemeData.from(
+            colorScheme: const ColorScheme.dark().copyWith(
+              primary: Colors.blue[200],
+              primaryVariant: Colors.blue[400],
+              secondary: Colors.lightBlue[100],
+              secondaryVariant: Colors.lightBlueAccent,
+            ),
+          ),
           home: HomePage(),
         ),
       ),
