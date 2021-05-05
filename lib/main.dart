@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:hololive_app/bloc/cubit/app_theme_cubit.dart';
 import 'package:hololive_app/bloc/home_page_bloc.dart';
 import 'package:hololive_app/service/notification_service.dart';
 import 'package:hololive_app/ui/home/home_page.dart';
@@ -17,16 +17,31 @@ Future<void> main() async {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget with WidgetsBindingObserver {
   // This widget is the root of your application.
+  final AppThemeCubit appThemeCubit = AppThemeCubit();
+
+  @override
+  void didChangePlatformBrightness() {
+    super.didChangePlatformBrightness();
+    appThemeCubit.toggle();
+  }
+
   @override
   Widget build(BuildContext context) {
+    WidgetsBinding.instance!.addObserver(this);
     return RepositoryProvider(
       create: (context) => HomePageRepository(),
-      child: BlocProvider(
-        create: (context) => HomePageBloc(
-          repository: RepositoryProvider.of<HomePageRepository>(context),
-        ),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+              create: (context) => HomePageBloc(
+                  repository:
+                      RepositoryProvider.of<HomePageRepository>(context))),
+          BlocProvider(
+            create: (context) => appThemeCubit,
+          )
+        ],
         child: MaterialApp(
           localizationsDelegates: const [
             S.delegate,
@@ -45,7 +60,7 @@ class MyApp extends StatelessWidget {
             ),
           ).copyWith(
             textButtonTheme: TextButtonThemeData(
-              style: TextButton.styleFrom(primary: Colors.black),
+              style: TextButton.styleFrom(primary: Colors.blue[400]),
             ),
           ),
           darkTheme: ThemeData.from(
@@ -55,7 +70,7 @@ class MyApp extends StatelessWidget {
               secondary: Colors.lightBlue[100],
               secondaryVariant: Colors.lightBlueAccent,
             ),
-          ),
+          ).copyWith(applyElevationOverlayColor: false),
           home: HomePage(),
         ),
       ),

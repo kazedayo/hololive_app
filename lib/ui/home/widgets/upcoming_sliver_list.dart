@@ -60,6 +60,7 @@ List<Widget> buildUpcomingSliverList(
       } else {
         return SliverSafeArea(
           top: false,
+          minimum: const EdgeInsets.only(bottom: 10),
           sliver: SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
