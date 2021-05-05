@@ -7,8 +7,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hololive_app/bloc/cubit/app_theme_cubit.dart';
 import 'package:hololive_app/bloc/home_page_bloc.dart';
 import 'package:hololive_app/generated/l10n.dart';
+import 'package:hololive_app/ui/home/widgets/pop_up_menu.dart';
 import 'package:hololive_app/ui/home/widgets/video_card.dart';
 import 'package:hololive_app/models/stream_video_item/stream_video_item.dart';
+import 'package:hololive_app/util/custom_url_launch.dart';
 import 'package:lottie/lottie.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -63,38 +65,8 @@ class _HomePageState extends State<HomePage> {
                         statusBarIconBrightness:
                             isDarkMode ? Brightness.light : Brightness.dark,
                       ),
-                      actions: [
-                        PopupMenuButton(
-                          itemBuilder: (context) => [
-                            PopupMenuItem(
-                              value: 0,
-                              child: ListTile(
-                                leading: const Icon(Icons.copyright),
-                                title: Text(S.of(context).copyright),
-                              ),
-                            ),
-                            PopupMenuItem(
-                              value: 1,
-                              child: ListTile(
-                                leading: const Icon(Icons.code_rounded),
-                                title: Text(S.of(context).source),
-                              ),
-                            ),
-                          ],
-                          onSelected: (value) {
-                            if (value == 0) {
-                              showLicensePage(
-                                applicationName: "HoloSchedule",
-                                context: context,
-                              );
-                            } else if (value == 1) {
-                              launch(
-                                'https://github.com/kazedayo/hololive_app',
-                              );
-                            }
-                          },
-                          icon: const Icon(Icons.more_vert_rounded),
-                        ),
+                      actions: const [
+                        PopupMenu(),
                       ],
                       pinned: true,
                       stretch: true,

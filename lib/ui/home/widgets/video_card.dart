@@ -1,12 +1,17 @@
+// Copyright (c) 2021 Kin Wa Lam
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:hololive_app/bloc/cubit/video_card_cubit.dart';
 import 'package:hololive_app/generated/l10n.dart';
 import 'package:hololive_app/models/stream_video_item/stream_video_item.dart';
+import 'package:hololive_app/util/custom_url_launch.dart';
 import 'package:jiffy/jiffy.dart';
 import 'package:transparent_image/transparent_image.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:intl/intl.dart';
 
 class VideoCard extends StatelessWidget {
@@ -39,11 +44,7 @@ class VideoCard extends StatelessWidget {
           child: InkWell(
             onTap: () async {
               final String url = "https://youtu.be/${item.yt_video_key}";
-              final launchNative = await launch(url,
-                  forceSafariVC: false, universalLinksOnly: true);
-              if (!launchNative) {
-                await launch(url, forceSafariVC: true);
-              }
+              customUrlLaunch(url);
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
