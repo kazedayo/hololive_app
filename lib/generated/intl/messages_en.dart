@@ -44,7 +44,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "source": MessageLookupByLibrary.simpleMessage("Source Code"),
         "streamStartNoti": m2,
         "streamStartNotiTilte":
-            MessageLookupByLibrary.simpleMessage("Stream starting!!"),
+            MessageLookupByLibrary.simpleMessage("🔴 Stream starting!!"),
         "thisWeek": MessageLookupByLibrary.simpleMessage("This Week"),
         "today": MessageLookupByLibrary.simpleMessage("Today"),
         "upcoming": MessageLookupByLibrary.simpleMessage("Upcoming Streams"),

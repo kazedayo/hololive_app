@@ -10,7 +10,7 @@
     "liveIn" : "Live {time}",
     "noScheduledStream": "No Scheduled Streams_(:3 」∠)_",
     "watching": "{number} watching",
-    "streamStartNotiTilte": "Stream starting!!",
+    "streamStartNotiTilte": "🔴 Stream starting!!",
     "streamStartNoti": "{channel}'s stream {streamTitle} is starting now!",
     "getNotified": "Get Notified",
     "notiOn": "Notification On",

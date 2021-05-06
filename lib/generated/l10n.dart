@@ -160,10 +160,10 @@ class S {
     );
   }
 
-  /// `Stream starting!!`
+  /// `🔴 Stream starting!!`
   String get streamStartNotiTilte {
     return Intl.message(
-      'Stream starting!!',
+      '🔴 Stream starting!!',
       name: 'streamStartNotiTilte',
       desc: '',
       args: [],

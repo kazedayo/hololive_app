@@ -43,10 +43,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "notiOn": MessageLookupByLibrary.simpleMessage("通知オン"),
         "source": MessageLookupByLibrary.simpleMessage("ソースコード"),
         "streamStartNoti": m2,
-        "streamStartNotiTilte": MessageLookupByLibrary.simpleMessage("配信開始!!"),
+        "streamStartNotiTilte":
+            MessageLookupByLibrary.simpleMessage("🔴 配信始まるよ!!"),
         "thisWeek": MessageLookupByLibrary.simpleMessage("今週"),
         "today": MessageLookupByLibrary.simpleMessage("今日"),
-        "upcoming": MessageLookupByLibrary.simpleMessage("しばらくの配信"),
+        "upcoming": MessageLookupByLibrary.simpleMessage("配信予定"),
         "watching": m3
       };
 }
