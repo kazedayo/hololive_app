@@ -1,0 +1,19 @@
+{
+    "live": "配信中",
+    "justStarted": "始まったところ",
+    "liveTime": "{time}始まった",
+    "upcoming": "しばらくの配信",
+    "nextHour": "一時間",
+    "today": "今日",
+    "thisWeek": "今週",
+    "goingLive": "もうすぐ",
+    "liveIn" : "{time}配信予定",
+    "noScheduledStream": "配信予定がない_(:3 」∠)_",
+    "watching": "{number}人観ている",
+    "streamStartNotiTilte": "配信開始!!",
+    "streamStartNoti": "{channel}の配信{streamTitle}が始まります!",
+    "getNotified": "通知を受け取る",
+    "notiOn": "通知オン",
+    "copyright": "ライセンス",
+    "source": "ソースコード"
+}

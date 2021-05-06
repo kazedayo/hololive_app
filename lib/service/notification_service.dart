@@ -1,6 +1,7 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:hololive_app/generated/l10n.dart';
 import 'package:hololive_app/models/stream_video_item/stream_video_item.dart';
+import 'package:hololive_app/util/custom_url_launch.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 
@@ -51,10 +52,12 @@ class NotificationService {
 
   void showNotification({required StreamVideoItem item}) async {
     await flutterLocalNotificationsPlugin.show(
-        item.hashCode,
-        S.current.streamStartNotiTilte,
-        S.current.streamStartNoti(item.channel.name, item.title),
-        notificationDetails);
+      item.hashCode,
+      S.current.streamStartNotiTilte,
+      S.current.streamStartNoti(item.channel.name, item.title),
+      notificationDetails,
+      payload: "https://youtu.be/${item.yt_video_key}",
+    );
   }
 
   void scheduleNotification({required StreamVideoItem item}) async {
@@ -81,6 +84,7 @@ class NotificationService {
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,
       androidAllowWhileIdle: true,
+      payload: "https://youtu.be/${item.yt_video_key}",
     );
   }
 
@@ -90,6 +94,9 @@ class NotificationService {
 
   Future selectNotification(String? payload) async {
     //Handle notification tapped logic here
+    if (payload != null) {
+      customUrlLaunch(payload);
+    }
   }
 
   Future onDidReceiveLocalNotification(

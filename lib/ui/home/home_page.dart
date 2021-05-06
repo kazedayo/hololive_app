@@ -10,9 +10,7 @@ import 'package:hololive_app/generated/l10n.dart';
 import 'package:hololive_app/ui/home/widgets/pop_up_menu.dart';
 import 'package:hololive_app/ui/home/widgets/video_card.dart';
 import 'package:hololive_app/models/stream_video_item/stream_video_item.dart';
-import 'package:hololive_app/util/custom_url_launch.dart';
 import 'package:lottie/lottie.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 part 'widgets/live_sliver_list.dart';
 part 'widgets/upcoming_sliver_list.dart';

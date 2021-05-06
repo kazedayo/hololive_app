@@ -6,6 +6,7 @@
 	<array>
 		<string>en</string>
 		<string>zh_TW</string>
+		<string>ja</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
