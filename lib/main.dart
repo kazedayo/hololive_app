@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget with WidgetsBindingObserver {
             GlobalWidgetsLocalizations.delegate
           ],
           supportedLocales: S.delegate.supportedLocales,
-          title: 'Hololive App',
+          title: 'HoloSchedule',
           theme: ThemeData.from(
             colorScheme: const ColorScheme.light().copyWith(
               primary: Colors.white,
