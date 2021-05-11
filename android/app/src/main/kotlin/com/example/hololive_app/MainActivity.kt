@@ -1,4 +1,4 @@
-package com.example.hololive_app
+package xyz.kaze.holoschedule
 
 import android.os.Build
 import android.os.Bundle
