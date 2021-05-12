@@ -219,6 +219,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Can't fetch data from network!`
+  String get networkError {
+    return Intl.message(
+      'Can\'t fetch data from network!',
+      name: 'networkError',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

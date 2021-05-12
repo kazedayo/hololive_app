@@ -36,6 +36,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "live": MessageLookupByLibrary.simpleMessage("正在直播"),
         "liveIn": m0,
         "liveTime": m1,
+        "networkError": MessageLookupByLibrary.simpleMessage("未能從網絡獲取資訊!"),
         "nextHour": MessageLookupByLibrary.simpleMessage("一小時內"),
         "noScheduledStream":
             MessageLookupByLibrary.simpleMessage("沒有即將開始的直播_(:3 」∠)_"),

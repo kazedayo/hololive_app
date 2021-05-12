@@ -88,7 +88,22 @@ class _HomePageState extends State<HomePage> {
                   child: CircularProgressIndicator(),
                 );
               } else {
-                return const SizedBox();
+                //assume state is HomePageError
+                return Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Icon(
+                        Icons.error_rounded,
+                        size: 48,
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      Text(S.of(context).networkError)
+                    ],
+                  ),
+                );
               }
             },
           ),

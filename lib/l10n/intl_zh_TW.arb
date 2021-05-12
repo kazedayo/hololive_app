@@ -15,5 +15,6 @@
     "getNotified": "取得通知",
     "notiOn": "已打開通知",
     "copyright": "授權資訊",
-    "source": "查看源代碼"
+    "source": "查看源代碼",
+    "networkError": "未能從網絡獲取資訊!"
 }

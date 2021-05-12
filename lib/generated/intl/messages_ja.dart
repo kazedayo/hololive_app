@@ -37,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "live": MessageLookupByLibrary.simpleMessage("配信中"),
         "liveIn": m0,
         "liveTime": m1,
+        "networkError": MessageLookupByLibrary.simpleMessage("ネットから資料を取れません!"),
         "nextHour": MessageLookupByLibrary.simpleMessage("一時間"),
         "noScheduledStream":
             MessageLookupByLibrary.simpleMessage("配信予定がない_(:3 」∠)_"),

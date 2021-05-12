@@ -15,5 +15,6 @@
     "getNotified": "Get Notified",
     "notiOn": "Notification On",
     "copyright": "Licences",
-    "source": "Source Code"
+    "source": "Source Code",
+    "networkError": "Can't fetch data from network!"
 }

@@ -37,6 +37,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "live": MessageLookupByLibrary.simpleMessage("Live Now"),
         "liveIn": m0,
         "liveTime": m1,
+        "networkError": MessageLookupByLibrary.simpleMessage(
+            "Can\'t fetch data from network!"),
         "nextHour": MessageLookupByLibrary.simpleMessage("Next Hour"),
         "noScheduledStream": MessageLookupByLibrary.simpleMessage(
             "No Scheduled Streams_(:3 」∠)_"),
