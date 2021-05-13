@@ -6,6 +6,7 @@
 import 'package:flutter/material.dart';
 import 'package:hololive_app/util/custom_url_launch.dart';
 import 'package:hololive_app/generated/l10n.dart';
+import 'package:package_info/package_info.dart';
 
 class PopupMenu extends StatelessWidget {
   const PopupMenu({
@@ -31,10 +32,27 @@ class PopupMenu extends StatelessWidget {
           ),
         ),
       ],
-      onSelected: (value) {
+      onSelected: (value) async {
         if (value == 0) {
           showLicensePage(
             applicationName: "HoloSchedule",
+            applicationIcon: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Material(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(14)),
+                clipBehavior: Clip.antiAlias,
+                elevation: 6,
+                child: SizedBox(
+                  width: 75,
+                  height: 75,
+                  child: Image.asset("assets/icon.png"),
+                ),
+              ),
+            ),
+            applicationVersion:
+                await PackageInfo.fromPlatform().then((value) => value.version),
+            applicationLegalese: "Kaze's App brewery",
             context: context,
           );
         } else if (value == 1) {
