@@ -33,7 +33,7 @@ class VideoCard extends StatelessWidget {
       child: BlocBuilder<VideoCardCubit, bool>(
         builder: (context, state) => Card(
           clipBehavior: Clip.antiAlias,
-          elevation: 6,
+          elevation: 3,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
@@ -97,7 +97,7 @@ class VideoCard extends StatelessWidget {
                         width: 40,
                         height: 40,
                         child: ClipRRect(
-                          borderRadius: BorderRadius.circular(25),
+                          borderRadius: BorderRadius.circular(999),
                           child: FadeInImage.memoryNetwork(
                             placeholder: kTransparentImage,
                             image: item.channel.photo,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:hololive_app/bloc/cubit/app_theme_cubit.dart';
+import 'package:hololive_app/bloc/cubit/app_settings_cubit.dart';
 import 'package:hololive_app/bloc/home_page_bloc.dart';
 import 'package:hololive_app/service/notification_service.dart';
 import 'package:hololive_app/ui/home/home_page.dart';
@@ -19,12 +19,12 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget with WidgetsBindingObserver {
   // This widget is the root of your application.
-  final AppThemeCubit appThemeCubit = AppThemeCubit();
+  final AppSettingsCubit appThemeCubit = AppSettingsCubit();
 
   @override
   void didChangePlatformBrightness() {
     super.didChangePlatformBrightness();
-    appThemeCubit.toggle();
+    appThemeCubit.toggleDarkMode();
   }
 
   @override

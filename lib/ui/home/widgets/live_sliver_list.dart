@@ -1,6 +1,7 @@
 part of '../home_page.dart';
 
-List<Widget>? buildLiveSliverList(BuildContext context, HomePageLoaded state) {
+List<Widget>? buildLiveSliverList(
+    BuildContext context, HomePageLoaded state, AppSettings settings) {
   if (state.liveList.isNotEmpty) {
     return [
       SliverToBoxAdapter(
@@ -29,11 +30,20 @@ List<Widget>? buildLiveSliverList(BuildContext context, HomePageLoaded state) {
           delegate: SliverChildBuilderDelegate(
             (context, index) {
               final StreamVideoItem item = state.liveList[index];
-              return VideoCard(
-                key: PageStorageKey(item.yt_video_key),
-                item: item,
-                isLive: true,
-              );
+              switch (settings.listDisplayMode) {
+                case ListDisplayMode.card:
+                  return VideoCard(
+                    key: PageStorageKey(item.yt_video_key),
+                    item: item,
+                    isLive: true,
+                  );
+                case ListDisplayMode.compact:
+                  return CompactItem(
+                    key: PageStorageKey(item.yt_video_key),
+                    item: item,
+                    isLive: true,
+                  );
+              }
             },
             childCount: state.liveList.length,
           ),
