@@ -11,12 +11,14 @@ on:
       - ".github/workflows/**"
       - "**.md"
       - "**.yaml"
+      - "**.plist"
   pull_request:
     branches: [ master ]
     paths-ignore:
       - ".github/workflows/**"
       - "**.md"
       - "**.yaml"
+      - "**.plist"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -35,20 +37,60 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: '12.x'
-      - uses: subosito/flutter-action@v1
+      - name: 'Setup Java Keystore'
+        run: |
+          echo "$PLAYSTORE_UPLOAD_KEY" | base64 --decode > app/upload-keystore.jks
+          echo "storeFile=upload-keystore.jks" >> key.properties
+          echo "keyAlias=$KEYSTORE_KEY_ALIAS" >> key.properties
+          echo "storePassword=$KEYSTORE_STORE_PASSWORD" >> key.properties
+          echo "keyPassword=$KEYSTORE_KEY_PASSWORD" >> key.properties
+        env:
+          PLAYSTORE_UPLOAD_KEY: ${{ secrets.PLAYSTORE_UPLOAD_KEY }}
+          KEYSTORE_KEY_ALIAS: 'upload'
+          KEYSTORE_KEY_PASSWORD: ${{ secrets.P12_PASSWORD }}
+          KEYSTORE_STORE_PASSWORD: ${{ secrets.P12_PASSWORD }}
+        working-directory: android
+      - name: 'Build Android APK and AppBundle'
+        uses: subosito/flutter-action@v1
         with:
           flutter-version: '2.0.6'
       - run: flutter pub get
       - run: flutter build apk
       - run: flutter build appbundle
+      - name: "Extract Android APK Artifact"
+        uses: actions/upload-artifact@v1
+        with:
+          name: release-apk
+          path: build/app/outputs/apk/release/app-release.apk
+      - name: "Extract Android AppBundle Artifact"
+        uses: actions/upload-artifact@v1
+        with:
+          name: release-aab
+          path: build/app/outputs/bundle/release/app-release.aab
   build_ios:
-    name: 'Build iOS ipa'
+    name: 'Build iOS IPA'
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: subosito/flutter-action@v1
+      - name: 'Prepare Signing'
+        uses: ngeri/prepare-signing@v1.0.2
+        with:
+          appStoreConnectPrivateKey: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
+          keyID: ${{ secrets.KEY_ID }}
+          issuerID: ${{ secrets.ISSUER_ID }}
+          base64P12File: ${{ secrets.BASE64_P12 }}
+          p12Password: ${{ secrets.P12_PASSWORD }}
+          bundleIdentifier: 'xyz.kaze.holoschedule'
+          signType: 'IOS_APP_STORE'
+      - name: "Build iOS IPA"
+        uses: subosito/flutter-action@v1
         with:
           flutter-version: '2.0.6'
       - run: flutter pub get
-      - run: flutter build ios --release --no-codesign
+      - run: flutter build ipa --export-options-plist=ExportOptions.plist
+      - name: "Extract IPA Artifact"
+        uses: actions/upload-artifact@v1
+        with:
+          name: release-ipa
+          path: build/ios/ipa/hololive_app.ipa
       
