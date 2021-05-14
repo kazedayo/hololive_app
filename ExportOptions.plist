@@ -6,8 +6,15 @@
 	<string>export</string>
 	<key>method</key>
 	<string>app-store</string>
+	<key>provisioningProfiles</key>
+	<dict>
+		<key>xyz.kaze.holoschedule</key>
+		<string>HoloSchedule Release</string>
+	</dict>
+	<key>signingCertificate</key>
+	<string>9C6178BCEF100787BB1134F40B94392C37294038</string>
 	<key>signingStyle</key>
-	<string>automatic</string>
+	<string>manual</string>
 	<key>stripSwiftSymbols</key>
 	<true/>
 	<key>teamID</key>
