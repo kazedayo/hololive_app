@@ -81,7 +81,7 @@ jobs:
         id: provisioning
         uses: apple-actions/download-provisioning-profiles@v1
         with: 
-          bundle-id: 'com.example.App'
+          bundle-id: 'xyz.kaze.holoschedule'
           profile-type: 'IOS_APP_STORE'
           issuer-id: ${{ secrets.ISSUER_ID }}
           api-key-id: ${{ secrets.KEY_ID }}
