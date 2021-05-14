@@ -72,16 +72,11 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: 'Prepare Signing'
-        uses: ngeri/prepare-signing@v1.0.2
+      - name: 'Import Code Signing Certificate'
+        uses: apple-actions/import-codesign-certs@v1
         with:
-          appStoreConnectPrivateKey: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
-          keyID: ${{ secrets.KEY_ID }}
-          issuerID: ${{ secrets.ISSUER_ID }}
-          base64P12File: ${{ secrets.BASE64_P12 }}
-          p12Password: ${{ secrets.P12_PASSWORD }}
-          bundleIdentifier: 'xyz.kaze.holoschedule'
-          signType: 'IOS_APP_STORE'
+          p12-file-base64: ${{ secrets.BASE64_P12 }}
+          p12-password: ${{ secrets.P12_PASSWORD }}
       - name: "Build iOS IPA"
         uses: subosito/flutter-action@v1
         with:
