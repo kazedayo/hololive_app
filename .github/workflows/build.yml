@@ -55,7 +55,7 @@ jobs:
       - name: 'Build Android APK and AppBundle'
         uses: subosito/flutter-action@v1
         with:
-          flutter-version: '2.0.6'
+          channel: 'stable'
       - run: flutter pub get
       - run: flutter build apk
       - run: flutter build appbundle
@@ -91,7 +91,7 @@ jobs:
       - name: "Build iOS IPA"
         uses: subosito/flutter-action@v1
         with:
-          flutter-version: '2.0.6'
+          channel: 'stable'
       - run: flutter pub get
       - run: flutter build ipa --export-options-plist=ExportOptions.plist
       - name: "Extract IPA Artifact"
