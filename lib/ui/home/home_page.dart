@@ -82,7 +82,14 @@ class _HomePageState extends State<HomePage> {
                       const SizedBox(
                         height: 12,
                       ),
-                      Text(S.of(context).networkError)
+                      Text(S.of(context).networkError),
+                      OutlinedButton(
+                        onPressed: () =>
+                            BlocProvider.of<HomePageBloc>(context).add(
+                          const RequestLiveList(),
+                        ),
+                        child: Text(S.of(context).retry),
+                      ),
                     ],
                   ),
                 );

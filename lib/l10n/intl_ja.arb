@@ -16,5 +16,6 @@
     "notiOn": "通知オン",
     "copyright": "ライセンス",
     "source": "ソースコード",
-    "networkError": "ネットから資料を取れません!"
+    "networkError": "ネットから資料を取れません!",
+    "retry": "リトライ"
 }

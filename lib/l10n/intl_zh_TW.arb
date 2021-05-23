@@ -16,5 +16,6 @@
     "notiOn": "已打開通知",
     "copyright": "授權資訊",
     "source": "查看源代碼",
-    "networkError": "未能從網絡獲取資訊!"
+    "networkError": "未能從網絡獲取資訊!",
+    "retry": "重試"
 }

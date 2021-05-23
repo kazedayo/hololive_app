@@ -42,6 +42,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "noScheduledStream":
             MessageLookupByLibrary.simpleMessage("配信予定がない_(:3 」∠)_"),
         "notiOn": MessageLookupByLibrary.simpleMessage("通知オン"),
+        "retry": MessageLookupByLibrary.simpleMessage("リトライ"),
         "source": MessageLookupByLibrary.simpleMessage("ソースコード"),
         "streamStartNoti": m2,
         "streamStartNotiTilte":

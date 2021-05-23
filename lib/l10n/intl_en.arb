@@ -16,5 +16,6 @@
     "notiOn": "Notification On",
     "copyright": "Licences",
     "source": "Source Code",
-    "networkError": "Can't fetch data from network!"
+    "networkError": "Can't fetch data from network!",
+    "retry": "Retry"
 }

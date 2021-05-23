@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "noScheduledStream":
             MessageLookupByLibrary.simpleMessage("沒有即將開始的直播_(:3 」∠)_"),
         "notiOn": MessageLookupByLibrary.simpleMessage("已打開通知"),
+        "retry": MessageLookupByLibrary.simpleMessage("重試"),
         "source": MessageLookupByLibrary.simpleMessage("查看源代碼"),
         "streamStartNoti": m2,
         "streamStartNotiTilte":
