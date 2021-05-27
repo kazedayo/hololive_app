@@ -3,6 +3,7 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
@@ -11,7 +12,6 @@ import 'package:hololive_app/generated/l10n.dart';
 import 'package:hololive_app/models/stream_video_item/stream_video_item.dart';
 import 'package:hololive_app/util/custom_url_launch.dart';
 import 'package:jiffy/jiffy.dart';
-import 'package:transparent_image/transparent_image.dart';
 import 'package:intl/intl.dart';
 
 class VideoCard extends StatelessWidget {
@@ -54,12 +54,11 @@ class VideoCard extends StatelessWidget {
                   children: [
                     AspectRatio(
                       aspectRatio: 1.78,
-                      child: FadeInImage.memoryNetwork(
-                        placeholder: kTransparentImage,
-                        image:
+                      child: CachedNetworkImage(
+                        imageUrl:
                             "https://img.youtube.com/vi/${item.yt_video_key}/hqdefault.jpg",
-                        fit: BoxFit.cover,
                         fadeInDuration: const Duration(milliseconds: 200),
+                        fit: BoxFit.cover,
                       ),
                     ),
                     Positioned(
@@ -98,9 +97,8 @@ class VideoCard extends StatelessWidget {
                         height: 40,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(999),
-                          child: FadeInImage.memoryNetwork(
-                            placeholder: kTransparentImage,
-                            image: item.channel.photo,
+                          child: CachedNetworkImage(
+                            imageUrl: item.channel.photo,
                             fadeInDuration: const Duration(milliseconds: 200),
                           ),
                         ),

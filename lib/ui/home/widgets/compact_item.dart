@@ -4,7 +4,7 @@ import 'package:hive/hive.dart';
 import 'package:hololive_app/bloc/cubit/video_card_cubit.dart';
 import 'package:hololive_app/models/stream_video_item/stream_video_item.dart';
 import 'package:hololive_app/util/custom_url_launch.dart';
-import 'package:transparent_image/transparent_image.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class CompactItem extends StatelessWidget {
   CompactItem({
@@ -38,9 +38,9 @@ class CompactItem extends StatelessWidget {
               },
               leading: ClipRRect(
                 borderRadius: BorderRadius.circular(999),
-                child: FadeInImage.memoryNetwork(
-                  placeholder: kTransparentImage,
-                  image: item.channel.photo,
+                child: CachedNetworkImage(
+                  imageUrl: item.channel.photo,
+                  fadeInDuration: const Duration(milliseconds: 200),
                 ),
               ),
               title: Text(
