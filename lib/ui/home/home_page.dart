@@ -19,6 +19,8 @@ part 'widgets/upcoming_sliver_list.dart';
 part 'widgets/custom_app_bar.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }

@@ -21,6 +21,8 @@ class MyApp extends StatelessWidget with WidgetsBindingObserver {
   // This widget is the root of your application.
   final AppSettingsCubit appThemeCubit = AppSettingsCubit();
 
+  MyApp({Key? key}) : super(key: key);
+
   @override
   void didChangePlatformBrightness() {
     super.didChangePlatformBrightness();
@@ -72,7 +74,7 @@ class MyApp extends StatelessWidget with WidgetsBindingObserver {
               secondaryVariant: Colors.lightBlueAccent,
             ),
           ).copyWith(applyElevationOverlayColor: false),
-          home: HomePage(),
+          home: const HomePage(),
         ),
       ),
     );
