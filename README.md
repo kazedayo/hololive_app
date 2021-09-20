@@ -4,6 +4,8 @@ An application for your simping needs
 
 ![banner](github/img/banner.png)
 
+[iOS Testflight Beta](https://testflight.apple.com/join/dfQsZgUx)
+
 ## Credits
 
 Data shamelessly fetched from HoloTools API by dragonjetmkii
