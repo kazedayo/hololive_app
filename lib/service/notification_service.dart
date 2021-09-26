@@ -56,13 +56,13 @@ class NotificationService {
       S.current.streamStartNotiTilte,
       S.current.streamStartNoti(item.channel.name, item.title),
       notificationDetails,
-      payload: "https://youtu.be/${item.yt_video_key}",
+      payload: "https://youtu.be/${item.ytVideoKey}",
     );
   }
 
   void scheduleNotification({required StreamVideoItem item}) async {
     final DateTime now = DateTime.now();
-    final DateTime streamStart = item.live_schedule!;
+    final DateTime streamStart = item.liveSchedule!;
     final Duration difference = now.isAfter(streamStart)
         ? now.difference(streamStart)
         : streamStart.difference(now);
@@ -84,7 +84,7 @@ class NotificationService {
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,
       androidAllowWhileIdle: true,
-      payload: "https://youtu.be/${item.yt_video_key}",
+      payload: "https://youtu.be/${item.ytVideoKey}",
     );
   }
 

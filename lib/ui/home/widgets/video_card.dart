@@ -43,7 +43,7 @@ class VideoCard extends StatelessWidget {
           ),
           child: InkWell(
             onTap: () async {
-              final String url = "https://youtu.be/${item.yt_video_key}";
+              final String url = "https://youtu.be/${item.ytVideoKey}";
               customUrlLaunch(url);
             },
             child: Column(
@@ -56,7 +56,7 @@ class VideoCard extends StatelessWidget {
                       aspectRatio: 1.78,
                       child: CachedNetworkImage(
                         imageUrl:
-                            "https://img.youtube.com/vi/${item.yt_video_key}/hqdefault.jpg",
+                            "https://img.youtube.com/vi/${item.ytVideoKey}/hqdefault.jpg",
                         fadeInDuration: const Duration(milliseconds: 200),
                         fit: BoxFit.cover,
                       ),
@@ -72,15 +72,15 @@ class VideoCard extends StatelessWidget {
                         ),
                         child: Text(
                           isLive
-                              ? item.live_start == null
+                              ? item.liveStart == null
                                   ? S.of(context).justStarted
                                   : S.of(context).liveTime(
-                                        Jiffy(item.live_start).fromNow(),
+                                        Jiffy(item.liveStart).fromNow(),
                                       )
-                              : item.live_schedule == null
+                              : item.liveSchedule == null
                                   ? S.of(context).goingLive
                                   : S.of(context).liveIn(
-                                        Jiffy(item.live_schedule).fromNow(),
+                                        Jiffy(item.liveSchedule).fromNow(),
                                       ),
                           style: const TextStyle(color: Colors.white),
                         ),
@@ -119,11 +119,11 @@ class VideoCard extends StatelessWidget {
                               item.channel.name,
                               style: Theme.of(context).textTheme.caption,
                             ),
-                            if (isLive && item.live_viewers != null)
+                            if (isLive && item.liveViewers != null)
                               Text(
                                 S.of(context).watching(
                                       NumberFormat.compact()
-                                          .format(item.live_viewers),
+                                          .format(item.liveViewers),
                                     ),
                                 style: Theme.of(context)
                                     .textTheme

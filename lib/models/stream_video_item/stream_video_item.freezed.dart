@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'stream_video_item.dart';
 
@@ -22,24 +23,24 @@ class _$StreamVideoItemTearOff {
 
   _StreamVideoItem call(
       {required int id,
-      DateTime? live_start,
-      DateTime? live_end,
-      DateTime? live_schedule,
-      int? live_viewers,
+      @JsonKey(name: "live_start") DateTime? liveStart,
+      @JsonKey(name: "live_end") DateTime? liveEnd,
+      @JsonKey(name: "live_schedule") DateTime? liveSchedule,
+      @JsonKey(name: "live_viewers") int? liveViewers,
       required Channel channel,
       String? status,
       required String title,
-      required String yt_video_key}) {
+      @JsonKey(name: "yt_video_key") required String ytVideoKey}) {
     return _StreamVideoItem(
       id: id,
-      live_start: live_start,
-      live_end: live_end,
-      live_schedule: live_schedule,
-      live_viewers: live_viewers,
+      liveStart: liveStart,
+      liveEnd: liveEnd,
+      liveSchedule: liveSchedule,
+      liveViewers: liveViewers,
       channel: channel,
       status: status,
       title: title,
-      yt_video_key: yt_video_key,
+      ytVideoKey: ytVideoKey,
     );
   }
 
@@ -54,14 +55,19 @@ const $StreamVideoItem = _$StreamVideoItemTearOff();
 /// @nodoc
 mixin _$StreamVideoItem {
   int get id => throw _privateConstructorUsedError;
-  DateTime? get live_start => throw _privateConstructorUsedError;
-  DateTime? get live_end => throw _privateConstructorUsedError;
-  DateTime? get live_schedule => throw _privateConstructorUsedError;
-  int? get live_viewers => throw _privateConstructorUsedError;
+  @JsonKey(name: "live_start")
+  DateTime? get liveStart => throw _privateConstructorUsedError;
+  @JsonKey(name: "live_end")
+  DateTime? get liveEnd => throw _privateConstructorUsedError;
+  @JsonKey(name: "live_schedule")
+  DateTime? get liveSchedule => throw _privateConstructorUsedError;
+  @JsonKey(name: "live_viewers")
+  int? get liveViewers => throw _privateConstructorUsedError;
   Channel get channel => throw _privateConstructorUsedError;
   String? get status => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  String get yt_video_key => throw _privateConstructorUsedError;
+  @JsonKey(name: "yt_video_key")
+  String get ytVideoKey => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -76,14 +82,14 @@ abstract class $StreamVideoItemCopyWith<$Res> {
       _$StreamVideoItemCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      DateTime? live_start,
-      DateTime? live_end,
-      DateTime? live_schedule,
-      int? live_viewers,
+      @JsonKey(name: "live_start") DateTime? liveStart,
+      @JsonKey(name: "live_end") DateTime? liveEnd,
+      @JsonKey(name: "live_schedule") DateTime? liveSchedule,
+      @JsonKey(name: "live_viewers") int? liveViewers,
       Channel channel,
       String? status,
       String title,
-      String yt_video_key});
+      @JsonKey(name: "yt_video_key") String ytVideoKey});
 
   $ChannelCopyWith<$Res> get channel;
 }
@@ -100,35 +106,35 @@ class _$StreamVideoItemCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? live_start = freezed,
-    Object? live_end = freezed,
-    Object? live_schedule = freezed,
-    Object? live_viewers = freezed,
+    Object? liveStart = freezed,
+    Object? liveEnd = freezed,
+    Object? liveSchedule = freezed,
+    Object? liveViewers = freezed,
     Object? channel = freezed,
     Object? status = freezed,
     Object? title = freezed,
-    Object? yt_video_key = freezed,
+    Object? ytVideoKey = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      live_start: live_start == freezed
-          ? _value.live_start
-          : live_start // ignore: cast_nullable_to_non_nullable
+      liveStart: liveStart == freezed
+          ? _value.liveStart
+          : liveStart // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      live_end: live_end == freezed
-          ? _value.live_end
-          : live_end // ignore: cast_nullable_to_non_nullable
+      liveEnd: liveEnd == freezed
+          ? _value.liveEnd
+          : liveEnd // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      live_schedule: live_schedule == freezed
-          ? _value.live_schedule
-          : live_schedule // ignore: cast_nullable_to_non_nullable
+      liveSchedule: liveSchedule == freezed
+          ? _value.liveSchedule
+          : liveSchedule // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      live_viewers: live_viewers == freezed
-          ? _value.live_viewers
-          : live_viewers // ignore: cast_nullable_to_non_nullable
+      liveViewers: liveViewers == freezed
+          ? _value.liveViewers
+          : liveViewers // ignore: cast_nullable_to_non_nullable
               as int?,
       channel: channel == freezed
           ? _value.channel
@@ -142,9 +148,9 @@ class _$StreamVideoItemCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      yt_video_key: yt_video_key == freezed
-          ? _value.yt_video_key
-          : yt_video_key // ignore: cast_nullable_to_non_nullable
+      ytVideoKey: ytVideoKey == freezed
+          ? _value.ytVideoKey
+          : ytVideoKey // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -166,14 +172,14 @@ abstract class _$StreamVideoItemCopyWith<$Res>
   @override
   $Res call(
       {int id,
-      DateTime? live_start,
-      DateTime? live_end,
-      DateTime? live_schedule,
-      int? live_viewers,
+      @JsonKey(name: "live_start") DateTime? liveStart,
+      @JsonKey(name: "live_end") DateTime? liveEnd,
+      @JsonKey(name: "live_schedule") DateTime? liveSchedule,
+      @JsonKey(name: "live_viewers") int? liveViewers,
       Channel channel,
       String? status,
       String title,
-      String yt_video_key});
+      @JsonKey(name: "yt_video_key") String ytVideoKey});
 
   @override
   $ChannelCopyWith<$Res> get channel;
@@ -193,35 +199,35 @@ class __$StreamVideoItemCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? live_start = freezed,
-    Object? live_end = freezed,
-    Object? live_schedule = freezed,
-    Object? live_viewers = freezed,
+    Object? liveStart = freezed,
+    Object? liveEnd = freezed,
+    Object? liveSchedule = freezed,
+    Object? liveViewers = freezed,
     Object? channel = freezed,
     Object? status = freezed,
     Object? title = freezed,
-    Object? yt_video_key = freezed,
+    Object? ytVideoKey = freezed,
   }) {
     return _then(_StreamVideoItem(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      live_start: live_start == freezed
-          ? _value.live_start
-          : live_start // ignore: cast_nullable_to_non_nullable
+      liveStart: liveStart == freezed
+          ? _value.liveStart
+          : liveStart // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      live_end: live_end == freezed
-          ? _value.live_end
-          : live_end // ignore: cast_nullable_to_non_nullable
+      liveEnd: liveEnd == freezed
+          ? _value.liveEnd
+          : liveEnd // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      live_schedule: live_schedule == freezed
-          ? _value.live_schedule
-          : live_schedule // ignore: cast_nullable_to_non_nullable
+      liveSchedule: liveSchedule == freezed
+          ? _value.liveSchedule
+          : liveSchedule // ignore: cast_nullable_to_non_nullable
               as DateTime?,
-      live_viewers: live_viewers == freezed
-          ? _value.live_viewers
-          : live_viewers // ignore: cast_nullable_to_non_nullable
+      liveViewers: liveViewers == freezed
+          ? _value.liveViewers
+          : liveViewers // ignore: cast_nullable_to_non_nullable
               as int?,
       channel: channel == freezed
           ? _value.channel
@@ -235,9 +241,9 @@ class __$StreamVideoItemCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      yt_video_key: yt_video_key == freezed
-          ? _value.yt_video_key
-          : yt_video_key // ignore: cast_nullable_to_non_nullable
+      ytVideoKey: ytVideoKey == freezed
+          ? _value.ytVideoKey
+          : ytVideoKey // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -248,28 +254,32 @@ class __$StreamVideoItemCopyWithImpl<$Res>
 class _$_StreamVideoItem implements _StreamVideoItem {
   _$_StreamVideoItem(
       {required this.id,
-      this.live_start,
-      this.live_end,
-      this.live_schedule,
-      this.live_viewers,
+      @JsonKey(name: "live_start") this.liveStart,
+      @JsonKey(name: "live_end") this.liveEnd,
+      @JsonKey(name: "live_schedule") this.liveSchedule,
+      @JsonKey(name: "live_viewers") this.liveViewers,
       required this.channel,
       this.status,
       required this.title,
-      required this.yt_video_key});
+      @JsonKey(name: "yt_video_key") required this.ytVideoKey});
 
   factory _$_StreamVideoItem.fromJson(Map<String, dynamic> json) =>
-      _$_$_StreamVideoItemFromJson(json);
+      _$$_StreamVideoItemFromJson(json);
 
   @override
   final int id;
   @override
-  final DateTime? live_start;
+  @JsonKey(name: "live_start")
+  final DateTime? liveStart;
   @override
-  final DateTime? live_end;
+  @JsonKey(name: "live_end")
+  final DateTime? liveEnd;
   @override
-  final DateTime? live_schedule;
+  @JsonKey(name: "live_schedule")
+  final DateTime? liveSchedule;
   @override
-  final int? live_viewers;
+  @JsonKey(name: "live_viewers")
+  final int? liveViewers;
   @override
   final Channel channel;
   @override
@@ -277,11 +287,12 @@ class _$_StreamVideoItem implements _StreamVideoItem {
   @override
   final String title;
   @override
-  final String yt_video_key;
+  @JsonKey(name: "yt_video_key")
+  final String ytVideoKey;
 
   @override
   String toString() {
-    return 'StreamVideoItem(id: $id, live_start: $live_start, live_end: $live_end, live_schedule: $live_schedule, live_viewers: $live_viewers, channel: $channel, status: $status, title: $title, yt_video_key: $yt_video_key)';
+    return 'StreamVideoItem(id: $id, liveStart: $liveStart, liveEnd: $liveEnd, liveSchedule: $liveSchedule, liveViewers: $liveViewers, channel: $channel, status: $status, title: $title, ytVideoKey: $ytVideoKey)';
   }
 
   @override
@@ -290,18 +301,18 @@ class _$_StreamVideoItem implements _StreamVideoItem {
         (other is _StreamVideoItem &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.live_start, live_start) ||
+            (identical(other.liveStart, liveStart) ||
                 const DeepCollectionEquality()
-                    .equals(other.live_start, live_start)) &&
-            (identical(other.live_end, live_end) ||
+                    .equals(other.liveStart, liveStart)) &&
+            (identical(other.liveEnd, liveEnd) ||
                 const DeepCollectionEquality()
-                    .equals(other.live_end, live_end)) &&
-            (identical(other.live_schedule, live_schedule) ||
+                    .equals(other.liveEnd, liveEnd)) &&
+            (identical(other.liveSchedule, liveSchedule) ||
                 const DeepCollectionEquality()
-                    .equals(other.live_schedule, live_schedule)) &&
-            (identical(other.live_viewers, live_viewers) ||
+                    .equals(other.liveSchedule, liveSchedule)) &&
+            (identical(other.liveViewers, liveViewers) ||
                 const DeepCollectionEquality()
-                    .equals(other.live_viewers, live_viewers)) &&
+                    .equals(other.liveViewers, liveViewers)) &&
             (identical(other.channel, channel) ||
                 const DeepCollectionEquality()
                     .equals(other.channel, channel)) &&
@@ -309,23 +320,23 @@ class _$_StreamVideoItem implements _StreamVideoItem {
                 const DeepCollectionEquality().equals(other.status, status)) &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.yt_video_key, yt_video_key) ||
+            (identical(other.ytVideoKey, ytVideoKey) ||
                 const DeepCollectionEquality()
-                    .equals(other.yt_video_key, yt_video_key)));
+                    .equals(other.ytVideoKey, ytVideoKey)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(live_start) ^
-      const DeepCollectionEquality().hash(live_end) ^
-      const DeepCollectionEquality().hash(live_schedule) ^
-      const DeepCollectionEquality().hash(live_viewers) ^
+      const DeepCollectionEquality().hash(liveStart) ^
+      const DeepCollectionEquality().hash(liveEnd) ^
+      const DeepCollectionEquality().hash(liveSchedule) ^
+      const DeepCollectionEquality().hash(liveViewers) ^
       const DeepCollectionEquality().hash(channel) ^
       const DeepCollectionEquality().hash(status) ^
       const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(yt_video_key);
+      const DeepCollectionEquality().hash(ytVideoKey);
 
   @JsonKey(ignore: true)
   @override
@@ -334,21 +345,22 @@ class _$_StreamVideoItem implements _StreamVideoItem {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_StreamVideoItemToJson(this);
+    return _$$_StreamVideoItemToJson(this);
   }
 }
 
 abstract class _StreamVideoItem implements StreamVideoItem {
   factory _StreamVideoItem(
-      {required int id,
-      DateTime? live_start,
-      DateTime? live_end,
-      DateTime? live_schedule,
-      int? live_viewers,
-      required Channel channel,
-      String? status,
-      required String title,
-      required String yt_video_key}) = _$_StreamVideoItem;
+          {required int id,
+          @JsonKey(name: "live_start") DateTime? liveStart,
+          @JsonKey(name: "live_end") DateTime? liveEnd,
+          @JsonKey(name: "live_schedule") DateTime? liveSchedule,
+          @JsonKey(name: "live_viewers") int? liveViewers,
+          required Channel channel,
+          String? status,
+          required String title,
+          @JsonKey(name: "yt_video_key") required String ytVideoKey}) =
+      _$_StreamVideoItem;
 
   factory _StreamVideoItem.fromJson(Map<String, dynamic> json) =
       _$_StreamVideoItem.fromJson;
@@ -356,13 +368,17 @@ abstract class _StreamVideoItem implements StreamVideoItem {
   @override
   int get id => throw _privateConstructorUsedError;
   @override
-  DateTime? get live_start => throw _privateConstructorUsedError;
+  @JsonKey(name: "live_start")
+  DateTime? get liveStart => throw _privateConstructorUsedError;
   @override
-  DateTime? get live_end => throw _privateConstructorUsedError;
+  @JsonKey(name: "live_end")
+  DateTime? get liveEnd => throw _privateConstructorUsedError;
   @override
-  DateTime? get live_schedule => throw _privateConstructorUsedError;
+  @JsonKey(name: "live_schedule")
+  DateTime? get liveSchedule => throw _privateConstructorUsedError;
   @override
-  int? get live_viewers => throw _privateConstructorUsedError;
+  @JsonKey(name: "live_viewers")
+  int? get liveViewers => throw _privateConstructorUsedError;
   @override
   Channel get channel => throw _privateConstructorUsedError;
   @override
@@ -370,7 +386,8 @@ abstract class _StreamVideoItem implements StreamVideoItem {
   @override
   String get title => throw _privateConstructorUsedError;
   @override
-  String get yt_video_key => throw _privateConstructorUsedError;
+  @JsonKey(name: "yt_video_key")
+  String get ytVideoKey => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$StreamVideoItemCopyWith<_StreamVideoItem> get copyWith =>

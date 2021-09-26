@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'channel.dart';
 
@@ -22,18 +23,18 @@ class _$ChannelTearOff {
 
   _Channel call(
       {required int id,
-      required String yt_channel_id,
+      @JsonKey(name: "yt_channel_id") required String ytChannelId,
       required String name,
       required String photo,
-      required String twitter_link,
-      required int subscriber_count}) {
+      @JsonKey(name: "twitter_link") required String twitterLink,
+      @JsonKey(name: "subscriber_count") required int subscriberCount}) {
     return _Channel(
       id: id,
-      yt_channel_id: yt_channel_id,
+      ytChannelId: ytChannelId,
       name: name,
       photo: photo,
-      twitter_link: twitter_link,
-      subscriber_count: subscriber_count,
+      twitterLink: twitterLink,
+      subscriberCount: subscriberCount,
     );
   }
 
@@ -48,11 +49,14 @@ const $Channel = _$ChannelTearOff();
 /// @nodoc
 mixin _$Channel {
   int get id => throw _privateConstructorUsedError;
-  String get yt_channel_id => throw _privateConstructorUsedError;
+  @JsonKey(name: "yt_channel_id")
+  String get ytChannelId => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get photo => throw _privateConstructorUsedError;
-  String get twitter_link => throw _privateConstructorUsedError;
-  int get subscriber_count => throw _privateConstructorUsedError;
+  @JsonKey(name: "twitter_link")
+  String get twitterLink => throw _privateConstructorUsedError;
+  @JsonKey(name: "subscriber_count")
+  int get subscriberCount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -65,11 +69,11 @@ abstract class $ChannelCopyWith<$Res> {
       _$ChannelCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      String yt_channel_id,
+      @JsonKey(name: "yt_channel_id") String ytChannelId,
       String name,
       String photo,
-      String twitter_link,
-      int subscriber_count});
+      @JsonKey(name: "twitter_link") String twitterLink,
+      @JsonKey(name: "subscriber_count") int subscriberCount});
 }
 
 /// @nodoc
@@ -83,20 +87,20 @@ class _$ChannelCopyWithImpl<$Res> implements $ChannelCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
-    Object? yt_channel_id = freezed,
+    Object? ytChannelId = freezed,
     Object? name = freezed,
     Object? photo = freezed,
-    Object? twitter_link = freezed,
-    Object? subscriber_count = freezed,
+    Object? twitterLink = freezed,
+    Object? subscriberCount = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      yt_channel_id: yt_channel_id == freezed
-          ? _value.yt_channel_id
-          : yt_channel_id // ignore: cast_nullable_to_non_nullable
+      ytChannelId: ytChannelId == freezed
+          ? _value.ytChannelId
+          : ytChannelId // ignore: cast_nullable_to_non_nullable
               as String,
       name: name == freezed
           ? _value.name
@@ -106,13 +110,13 @@ class _$ChannelCopyWithImpl<$Res> implements $ChannelCopyWith<$Res> {
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
               as String,
-      twitter_link: twitter_link == freezed
-          ? _value.twitter_link
-          : twitter_link // ignore: cast_nullable_to_non_nullable
+      twitterLink: twitterLink == freezed
+          ? _value.twitterLink
+          : twitterLink // ignore: cast_nullable_to_non_nullable
               as String,
-      subscriber_count: subscriber_count == freezed
-          ? _value.subscriber_count
-          : subscriber_count // ignore: cast_nullable_to_non_nullable
+      subscriberCount: subscriberCount == freezed
+          ? _value.subscriberCount
+          : subscriberCount // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -125,11 +129,11 @@ abstract class _$ChannelCopyWith<$Res> implements $ChannelCopyWith<$Res> {
   @override
   $Res call(
       {int id,
-      String yt_channel_id,
+      @JsonKey(name: "yt_channel_id") String ytChannelId,
       String name,
       String photo,
-      String twitter_link,
-      int subscriber_count});
+      @JsonKey(name: "twitter_link") String twitterLink,
+      @JsonKey(name: "subscriber_count") int subscriberCount});
 }
 
 /// @nodoc
@@ -144,20 +148,20 @@ class __$ChannelCopyWithImpl<$Res> extends _$ChannelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? yt_channel_id = freezed,
+    Object? ytChannelId = freezed,
     Object? name = freezed,
     Object? photo = freezed,
-    Object? twitter_link = freezed,
-    Object? subscriber_count = freezed,
+    Object? twitterLink = freezed,
+    Object? subscriberCount = freezed,
   }) {
     return _then(_Channel(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      yt_channel_id: yt_channel_id == freezed
-          ? _value.yt_channel_id
-          : yt_channel_id // ignore: cast_nullable_to_non_nullable
+      ytChannelId: ytChannelId == freezed
+          ? _value.ytChannelId
+          : ytChannelId // ignore: cast_nullable_to_non_nullable
               as String,
       name: name == freezed
           ? _value.name
@@ -167,13 +171,13 @@ class __$ChannelCopyWithImpl<$Res> extends _$ChannelCopyWithImpl<$Res>
           ? _value.photo
           : photo // ignore: cast_nullable_to_non_nullable
               as String,
-      twitter_link: twitter_link == freezed
-          ? _value.twitter_link
-          : twitter_link // ignore: cast_nullable_to_non_nullable
+      twitterLink: twitterLink == freezed
+          ? _value.twitterLink
+          : twitterLink // ignore: cast_nullable_to_non_nullable
               as String,
-      subscriber_count: subscriber_count == freezed
-          ? _value.subscriber_count
-          : subscriber_count // ignore: cast_nullable_to_non_nullable
+      subscriberCount: subscriberCount == freezed
+          ? _value.subscriberCount
+          : subscriberCount // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -184,31 +188,34 @@ class __$ChannelCopyWithImpl<$Res> extends _$ChannelCopyWithImpl<$Res>
 class _$_Channel implements _Channel {
   _$_Channel(
       {required this.id,
-      required this.yt_channel_id,
+      @JsonKey(name: "yt_channel_id") required this.ytChannelId,
       required this.name,
       required this.photo,
-      required this.twitter_link,
-      required this.subscriber_count});
+      @JsonKey(name: "twitter_link") required this.twitterLink,
+      @JsonKey(name: "subscriber_count") required this.subscriberCount});
 
   factory _$_Channel.fromJson(Map<String, dynamic> json) =>
-      _$_$_ChannelFromJson(json);
+      _$$_ChannelFromJson(json);
 
   @override
   final int id;
   @override
-  final String yt_channel_id;
+  @JsonKey(name: "yt_channel_id")
+  final String ytChannelId;
   @override
   final String name;
   @override
   final String photo;
   @override
-  final String twitter_link;
+  @JsonKey(name: "twitter_link")
+  final String twitterLink;
   @override
-  final int subscriber_count;
+  @JsonKey(name: "subscriber_count")
+  final int subscriberCount;
 
   @override
   String toString() {
-    return 'Channel(id: $id, yt_channel_id: $yt_channel_id, name: $name, photo: $photo, twitter_link: $twitter_link, subscriber_count: $subscriber_count)';
+    return 'Channel(id: $id, ytChannelId: $ytChannelId, name: $name, photo: $photo, twitterLink: $twitterLink, subscriberCount: $subscriberCount)';
   }
 
   @override
@@ -217,30 +224,30 @@ class _$_Channel implements _Channel {
         (other is _Channel &&
             (identical(other.id, id) ||
                 const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.yt_channel_id, yt_channel_id) ||
+            (identical(other.ytChannelId, ytChannelId) ||
                 const DeepCollectionEquality()
-                    .equals(other.yt_channel_id, yt_channel_id)) &&
+                    .equals(other.ytChannelId, ytChannelId)) &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
             (identical(other.photo, photo) ||
                 const DeepCollectionEquality().equals(other.photo, photo)) &&
-            (identical(other.twitter_link, twitter_link) ||
+            (identical(other.twitterLink, twitterLink) ||
                 const DeepCollectionEquality()
-                    .equals(other.twitter_link, twitter_link)) &&
-            (identical(other.subscriber_count, subscriber_count) ||
+                    .equals(other.twitterLink, twitterLink)) &&
+            (identical(other.subscriberCount, subscriberCount) ||
                 const DeepCollectionEquality()
-                    .equals(other.subscriber_count, subscriber_count)));
+                    .equals(other.subscriberCount, subscriberCount)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(yt_channel_id) ^
+      const DeepCollectionEquality().hash(ytChannelId) ^
       const DeepCollectionEquality().hash(name) ^
       const DeepCollectionEquality().hash(photo) ^
-      const DeepCollectionEquality().hash(twitter_link) ^
-      const DeepCollectionEquality().hash(subscriber_count);
+      const DeepCollectionEquality().hash(twitterLink) ^
+      const DeepCollectionEquality().hash(subscriberCount);
 
   @JsonKey(ignore: true)
   @override
@@ -249,33 +256,37 @@ class _$_Channel implements _Channel {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_ChannelToJson(this);
+    return _$$_ChannelToJson(this);
   }
 }
 
 abstract class _Channel implements Channel {
   factory _Channel(
-      {required int id,
-      required String yt_channel_id,
-      required String name,
-      required String photo,
-      required String twitter_link,
-      required int subscriber_count}) = _$_Channel;
+          {required int id,
+          @JsonKey(name: "yt_channel_id") required String ytChannelId,
+          required String name,
+          required String photo,
+          @JsonKey(name: "twitter_link") required String twitterLink,
+          @JsonKey(name: "subscriber_count") required int subscriberCount}) =
+      _$_Channel;
 
   factory _Channel.fromJson(Map<String, dynamic> json) = _$_Channel.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;
   @override
-  String get yt_channel_id => throw _privateConstructorUsedError;
+  @JsonKey(name: "yt_channel_id")
+  String get ytChannelId => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override
   String get photo => throw _privateConstructorUsedError;
   @override
-  String get twitter_link => throw _privateConstructorUsedError;
+  @JsonKey(name: "twitter_link")
+  String get twitterLink => throw _privateConstructorUsedError;
   @override
-  int get subscriber_count => throw _privateConstructorUsedError;
+  @JsonKey(name: "subscriber_count")
+  int get subscriberCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ChannelCopyWith<_Channel> get copyWith =>

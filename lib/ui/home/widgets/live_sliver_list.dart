@@ -33,13 +33,13 @@ List<Widget>? buildLiveSliverList(
               switch (settings.listDisplayMode) {
                 case ListDisplayMode.card:
                   return VideoCard(
-                    key: PageStorageKey(item.yt_video_key),
+                    key: PageStorageKey(item.ytVideoKey),
                     item: item,
                     isLive: true,
                   );
                 case ListDisplayMode.compact:
                   return CompactItem(
-                    key: PageStorageKey(item.yt_video_key),
+                    key: PageStorageKey(item.ytVideoKey),
                     item: item,
                     isLive: true,
                   );

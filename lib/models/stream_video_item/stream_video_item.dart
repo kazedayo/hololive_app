@@ -1,3 +1,5 @@
+// ignore_for_file: invalid_annotation_target
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hololive_app/models/channel/channel.dart';
 
@@ -8,14 +10,14 @@ part 'stream_video_item.g.dart';
 class StreamVideoItem with _$StreamVideoItem {
   factory StreamVideoItem({
     required int id,
-    DateTime? live_start,
-    DateTime? live_end,
-    DateTime? live_schedule,
-    int? live_viewers,
+    @JsonKey(name: "live_start") DateTime? liveStart,
+    @JsonKey(name: "live_end") DateTime? liveEnd,
+    @JsonKey(name: "live_schedule") DateTime? liveSchedule,
+    @JsonKey(name: "live_viewers") int? liveViewers,
     required Channel channel,
     String? status,
     required String title,
-    required String yt_video_key,
+    @JsonKey(name: "yt_video_key") required String ytVideoKey,
   }) = _StreamVideoItem;
 
   factory StreamVideoItem.fromJson(Map<String, dynamic> json) =>

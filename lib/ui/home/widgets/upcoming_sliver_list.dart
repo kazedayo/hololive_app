@@ -68,13 +68,13 @@ List<Widget> buildUpcomingSliverList(
                 switch (settings.listDisplayMode) {
                   case ListDisplayMode.card:
                     return VideoCard(
-                      key: PageStorageKey(item.yt_video_key),
+                      key: PageStorageKey(item.ytVideoKey),
                       item: item,
                       isLive: false,
                     );
                   case ListDisplayMode.compact:
                     return CompactItem(
-                      key: PageStorageKey(item.yt_video_key),
+                      key: PageStorageKey(item.ytVideoKey),
                       item: item,
                       isLive: false,
                     );

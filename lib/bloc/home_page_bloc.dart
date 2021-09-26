@@ -25,7 +25,7 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
         final live = await compute(sortLiveList, response.live);
         final upcoming = await compute(sortUpcomingList, response.upcoming);
         for (final StreamVideoItem e in live) {
-          notiBox.delete(e.yt_video_key);
+          notiBox.delete(e.ytVideoKey);
         }
         yield HomePageLoaded(
             liveList: live, upcomingList: upcoming, filter: event.filter);
@@ -42,9 +42,9 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
 }
 
 List<StreamVideoItem> sortLiveList(List<StreamVideoItem> list) => list
-  ..sort((a, b) => (b.live_start ?? DateTime.now())
-      .compareTo(a.live_start ?? DateTime.now()));
+  ..sort((a, b) =>
+      (b.liveStart ?? DateTime.now()).compareTo(a.liveStart ?? DateTime.now()));
 
 List<StreamVideoItem> sortUpcomingList(List<StreamVideoItem> list) => list
-  ..sort((a, b) => (a.live_schedule ?? DateTime.now())
-      .compareTo(b.live_schedule ?? DateTime.now()));
+  ..sort((a, b) => (a.liveSchedule ?? DateTime.now())
+      .compareTo(b.liveSchedule ?? DateTime.now()));
