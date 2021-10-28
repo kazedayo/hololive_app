@@ -32,6 +32,7 @@ class CompactItem extends StatelessWidget {
               horizontal: 16,
             ),
             child: ListTile(
+              minVerticalPadding: 8,
               onTap: () async {
                 final String url = "https://youtu.be/${item.ytVideoKey}";
                 customUrlLaunch(url);
@@ -39,6 +40,8 @@ class CompactItem extends StatelessWidget {
               leading: ClipRRect(
                 borderRadius: BorderRadius.circular(999),
                 child: CachedNetworkImage(
+                  width: 50,
+                  height: 50,
                   imageUrl: item.channel.photo,
                   fadeInDuration: const Duration(milliseconds: 200),
                 ),
@@ -49,9 +52,12 @@ class CompactItem extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              subtitle: Text(
-                item.channel.name,
-                style: Theme.of(context).textTheme.caption,
+              subtitle: Padding(
+                padding: const EdgeInsets.only(top: 4),
+                child: Text(
+                  item.channel.name,
+                  style: Theme.of(context).textTheme.caption,
+                ),
               ),
               trailing: isLive
                   ? null

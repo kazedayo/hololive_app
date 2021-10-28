@@ -92,15 +92,13 @@ class VideoCard extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
                     children: [
-                      SizedBox(
-                        width: 40,
-                        height: 40,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(999),
-                          child: CachedNetworkImage(
-                            imageUrl: item.channel.photo,
-                            fadeInDuration: const Duration(milliseconds: 200),
-                          ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(999),
+                        child: CachedNetworkImage(
+                          width: 40,
+                          height: 40,
+                          imageUrl: item.channel.photo,
+                          fadeInDuration: const Duration(milliseconds: 200),
                         ),
                       ),
                       const SizedBox(
