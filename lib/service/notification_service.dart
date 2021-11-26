@@ -22,7 +22,8 @@ class NotificationService {
   static const channelDescription = "HoloSchedule Notification";
 
   static const AndroidNotificationDetails androidNotificationDetails =
-      AndroidNotificationDetails(channelId, appName, channelDescription,
+      AndroidNotificationDetails(channelId, appName,
+          channelDescription: channelDescription,
           styleInformation: BigTextStyleInformation(''));
   static const IOSNotificationDetails iosNotificationDetails =
       IOSNotificationDetails(threadIdentifier: channelId);

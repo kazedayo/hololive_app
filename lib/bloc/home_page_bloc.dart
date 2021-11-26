@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
@@ -13,30 +15,34 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
   final HomePageRepository repository;
   final Box<String> notiBox = Hive.box('notiBox');
 
-  HomePageBloc({required this.repository}) : super(HomePageInit());
+  HomePageBloc({required this.repository}) : super(HomePageInit()) {
+    on<RequestLiveList>(_onRequestLiveList);
+    on<UpdateFilter>(_onUpdateFilter);
+  }
 
-  @override
-  Stream<HomePageState> mapEventToState(HomePageEvent event) async* {
-    if (event is RequestLiveList) {
-      yield HomePageLoading();
-      try {
-        final LiveApiResponse response =
-            await repository.getSchedule(filter: event.filter);
-        final live = await compute(sortLiveList, response.live);
-        final upcoming = await compute(sortUpcomingList, response.upcoming);
-        for (final StreamVideoItem e in live) {
-          notiBox.delete(e.ytVideoKey);
-        }
-        yield HomePageLoaded(
-            liveList: live, upcomingList: upcoming, filter: event.filter);
-      } catch (e) {
-        yield HomePageError();
+  FutureOr<void> _onRequestLiveList(
+      RequestLiveList event, Emitter<HomePageState> emit) async {
+    emit(HomePageLoading());
+    try {
+      final LiveApiResponse response =
+          await repository.getSchedule(filter: event.filter);
+      final live = await compute(sortLiveList, response.live);
+      final upcoming = await compute(sortUpcomingList, response.upcoming);
+      for (final StreamVideoItem e in live) {
+        notiBox.delete(e.ytVideoKey);
       }
-    } else if (event is UpdateFilter) {
-      if (state is HomePageLoaded) {
-        yield (state as HomePageLoaded).copyWith(filter: event.filter);
-        add(RequestLiveList(filter: event.filter));
-      }
+      emit(HomePageLoaded(
+          liveList: live, upcomingList: upcoming, filter: event.filter));
+    } catch (e) {
+      emit(HomePageError());
+    }
+  }
+
+  FutureOr<void> _onUpdateFilter(
+      UpdateFilter event, Emitter<HomePageState> emit) async {
+    if (state is HomePageLoaded) {
+      emit((state as HomePageLoaded).copyWith(filter: event.filter));
+      add(RequestLiveList(filter: event.filter));
     }
   }
 }
