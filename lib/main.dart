@@ -7,7 +7,6 @@ import 'package:hololive_app/service/notification_service.dart';
 import 'package:hololive_app/ui/home/home_page.dart';
 import 'package:hololive_app/repository/home_page_repository.dart';
 import 'package:hololive_app/generated/l10n.dart';
-import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 Future<void> main() async {
