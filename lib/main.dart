@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget with WidgetsBindingObserver {
               primary: Colors.white,
               onPrimary: Colors.black,
               secondary: Colors.blue[200],
-              secondaryVariant: Colors.blue[400],
+              secondaryContainer: Colors.blue[400],
             ),
           ).copyWith(
             textButtonTheme: TextButtonThemeData(
@@ -68,9 +68,9 @@ class MyApp extends StatelessWidget with WidgetsBindingObserver {
           darkTheme: ThemeData.from(
             colorScheme: const ColorScheme.dark().copyWith(
               primary: Colors.blue[200],
-              primaryVariant: Colors.blue[400],
+              primaryContainer: Colors.blue[400],
               secondary: Colors.lightBlue[100],
-              secondaryVariant: Colors.lightBlueAccent,
+              secondaryContainer: Colors.lightBlueAccent,
             ),
           ).copyWith(applyElevationOverlayColor: false),
           home: const HomePage(),
