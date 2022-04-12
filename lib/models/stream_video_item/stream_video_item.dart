@@ -10,9 +10,9 @@ part 'stream_video_item.g.dart';
 class StreamVideoItem with _$StreamVideoItem {
   factory StreamVideoItem({
     required String id,
-    @JsonKey(name: "start_scheduled") DateTime? liveStart,
-    @JsonKey(name: "live_end") DateTime? liveEnd,
-    @JsonKey(name: "live_schedule") DateTime? liveSchedule,
+    @JsonKey(name: "start_actual") DateTime? liveStart,
+    @JsonKey(name: "end_actual") DateTime? liveEnd,
+    @JsonKey(name: "start_scheduled") DateTime? liveSchedule,
     @JsonKey(name: "live_viewers") int? liveViewers,
     required Channel channel,
     required String status,

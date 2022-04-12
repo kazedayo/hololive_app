@@ -24,9 +24,9 @@ class _$StreamVideoItemTearOff {
 
   _StreamVideoItem call(
       {required String id,
-      @JsonKey(name: "start_scheduled") DateTime? liveStart,
-      @JsonKey(name: "live_end") DateTime? liveEnd,
-      @JsonKey(name: "live_schedule") DateTime? liveSchedule,
+      @JsonKey(name: "start_actual") DateTime? liveStart,
+      @JsonKey(name: "end_actual") DateTime? liveEnd,
+      @JsonKey(name: "start_scheduled") DateTime? liveSchedule,
       @JsonKey(name: "live_viewers") int? liveViewers,
       required Channel channel,
       required String status,
@@ -54,11 +54,11 @@ const $StreamVideoItem = _$StreamVideoItemTearOff();
 /// @nodoc
 mixin _$StreamVideoItem {
   String get id => throw _privateConstructorUsedError;
-  @JsonKey(name: "start_scheduled")
+  @JsonKey(name: "start_actual")
   DateTime? get liveStart => throw _privateConstructorUsedError;
-  @JsonKey(name: "live_end")
+  @JsonKey(name: "end_actual")
   DateTime? get liveEnd => throw _privateConstructorUsedError;
-  @JsonKey(name: "live_schedule")
+  @JsonKey(name: "start_scheduled")
   DateTime? get liveSchedule => throw _privateConstructorUsedError;
   @JsonKey(name: "live_viewers")
   int? get liveViewers => throw _privateConstructorUsedError;
@@ -79,9 +79,9 @@ abstract class $StreamVideoItemCopyWith<$Res> {
       _$StreamVideoItemCopyWithImpl<$Res>;
   $Res call(
       {String id,
-      @JsonKey(name: "start_scheduled") DateTime? liveStart,
-      @JsonKey(name: "live_end") DateTime? liveEnd,
-      @JsonKey(name: "live_schedule") DateTime? liveSchedule,
+      @JsonKey(name: "start_actual") DateTime? liveStart,
+      @JsonKey(name: "end_actual") DateTime? liveEnd,
+      @JsonKey(name: "start_scheduled") DateTime? liveSchedule,
       @JsonKey(name: "live_viewers") int? liveViewers,
       Channel channel,
       String status,
@@ -163,9 +163,9 @@ abstract class _$StreamVideoItemCopyWith<$Res>
   @override
   $Res call(
       {String id,
-      @JsonKey(name: "start_scheduled") DateTime? liveStart,
-      @JsonKey(name: "live_end") DateTime? liveEnd,
-      @JsonKey(name: "live_schedule") DateTime? liveSchedule,
+      @JsonKey(name: "start_actual") DateTime? liveStart,
+      @JsonKey(name: "end_actual") DateTime? liveEnd,
+      @JsonKey(name: "start_scheduled") DateTime? liveSchedule,
       @JsonKey(name: "live_viewers") int? liveViewers,
       Channel channel,
       String status,
@@ -239,9 +239,9 @@ class __$StreamVideoItemCopyWithImpl<$Res>
 class _$_StreamVideoItem implements _StreamVideoItem {
   _$_StreamVideoItem(
       {required this.id,
-      @JsonKey(name: "start_scheduled") this.liveStart,
-      @JsonKey(name: "live_end") this.liveEnd,
-      @JsonKey(name: "live_schedule") this.liveSchedule,
+      @JsonKey(name: "start_actual") this.liveStart,
+      @JsonKey(name: "end_actual") this.liveEnd,
+      @JsonKey(name: "start_scheduled") this.liveSchedule,
       @JsonKey(name: "live_viewers") this.liveViewers,
       required this.channel,
       required this.status,
@@ -253,13 +253,13 @@ class _$_StreamVideoItem implements _StreamVideoItem {
   @override
   final String id;
   @override
-  @JsonKey(name: "start_scheduled")
+  @JsonKey(name: "start_actual")
   final DateTime? liveStart;
   @override
-  @JsonKey(name: "live_end")
+  @JsonKey(name: "end_actual")
   final DateTime? liveEnd;
   @override
-  @JsonKey(name: "live_schedule")
+  @JsonKey(name: "start_scheduled")
   final DateTime? liveSchedule;
   @override
   @JsonKey(name: "live_viewers")
@@ -319,9 +319,9 @@ class _$_StreamVideoItem implements _StreamVideoItem {
 abstract class _StreamVideoItem implements StreamVideoItem {
   factory _StreamVideoItem(
       {required String id,
-      @JsonKey(name: "start_scheduled") DateTime? liveStart,
-      @JsonKey(name: "live_end") DateTime? liveEnd,
-      @JsonKey(name: "live_schedule") DateTime? liveSchedule,
+      @JsonKey(name: "start_actual") DateTime? liveStart,
+      @JsonKey(name: "end_actual") DateTime? liveEnd,
+      @JsonKey(name: "start_scheduled") DateTime? liveSchedule,
       @JsonKey(name: "live_viewers") int? liveViewers,
       required Channel channel,
       required String status,
@@ -333,13 +333,13 @@ abstract class _StreamVideoItem implements StreamVideoItem {
   @override
   String get id;
   @override
-  @JsonKey(name: "start_scheduled")
+  @JsonKey(name: "start_actual")
   DateTime? get liveStart;
   @override
-  @JsonKey(name: "live_end")
+  @JsonKey(name: "end_actual")
   DateTime? get liveEnd;
   @override
-  @JsonKey(name: "live_schedule")
+  @JsonKey(name: "start_scheduled")
   DateTime? get liveSchedule;
   @override
   @JsonKey(name: "live_viewers")
