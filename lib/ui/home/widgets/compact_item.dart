@@ -34,7 +34,7 @@ class CompactItem extends StatelessWidget {
             child: ListTile(
               minVerticalPadding: 8,
               onTap: () async {
-                final String url = "https://youtu.be/${item.ytVideoKey}";
+                final String url = "https://youtu.be/${item.id}";
                 customUrlLaunch(url);
               },
               leading: ClipRRect(

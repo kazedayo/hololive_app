@@ -57,7 +57,7 @@ class NotificationService {
       S.current.streamStartNotiTilte,
       S.current.streamStartNoti(item.channel.name, item.title),
       notificationDetails,
-      payload: "https://youtu.be/${item.ytVideoKey}",
+      payload: "https://youtu.be/${item.id}",
     );
   }
 
@@ -85,7 +85,7 @@ class NotificationService {
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,
       androidAllowWhileIdle: true,
-      payload: "https://youtu.be/${item.ytVideoKey}",
+      payload: "https://youtu.be/${item.id}",
     );
   }
 

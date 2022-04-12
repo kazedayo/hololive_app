@@ -8,12 +8,9 @@ part 'channel.g.dart';
 @freezed
 class Channel with _$Channel {
   factory Channel({
-    required int id,
-    @JsonKey(name: "yt_channel_id") required String ytChannelId,
+    required String id,
     required String name,
     required String photo,
-    @JsonKey(name: "twitter_link") required String twitterLink,
-    @JsonKey(name: "subscriber_count") required int subscriberCount,
   }) = _Channel;
 
   factory Channel.fromJson(Map<String, dynamic> json) =>

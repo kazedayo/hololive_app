@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hololive_app/bloc/cubit/app_settings_cubit.dart';
 import 'package:hololive_app/bloc/home_page_bloc.dart';
@@ -9,10 +10,11 @@ import 'package:hololive_app/repository/home_page_repository.dart';
 import 'package:hololive_app/generated/l10n.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-Future<void> main() async {
+Future main() async {
   await Hive.initFlutter();
   await Hive.openBox<String>('notiBox');
   await NotificationService().init();
+  await dotenv.load();
   runApp(MyApp());
 }
 

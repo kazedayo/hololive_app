@@ -9,15 +9,14 @@ part 'stream_video_item.g.dart';
 @freezed
 class StreamVideoItem with _$StreamVideoItem {
   factory StreamVideoItem({
-    required int id,
-    @JsonKey(name: "live_start") DateTime? liveStart,
+    required String id,
+    @JsonKey(name: "start_scheduled") DateTime? liveStart,
     @JsonKey(name: "live_end") DateTime? liveEnd,
     @JsonKey(name: "live_schedule") DateTime? liveSchedule,
     @JsonKey(name: "live_viewers") int? liveViewers,
     required Channel channel,
-    String? status,
+    required String status,
     required String title,
-    @JsonKey(name: "yt_video_key") required String ytVideoKey,
   }) = _StreamVideoItem;
 
   factory StreamVideoItem.fromJson(Map<String, dynamic> json) =>

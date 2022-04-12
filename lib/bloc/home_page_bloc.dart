@@ -4,7 +4,6 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
-import 'package:hololive_app/models/live_api_response/live_api_response.dart';
 import 'package:hololive_app/models/stream_video_item/stream_video_item.dart';
 import 'package:hololive_app/repository/home_page_repository.dart';
 
@@ -24,12 +23,12 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
       RequestLiveList event, Emitter<HomePageState> emit) async {
     emit(HomePageLoading());
     try {
-      final LiveApiResponse response =
+      final List<StreamVideoItem> response =
           await repository.getSchedule(filter: event.filter);
-      final live = await compute(sortLiveList, response.live);
-      final upcoming = await compute(sortUpcomingList, response.upcoming);
+      final live = await compute(retrieveLiveList, response);
+      final upcoming = await compute(retrieveUpcomingList, response);
       for (final StreamVideoItem e in live) {
-        notiBox.delete(e.ytVideoKey);
+        notiBox.delete(e.id);
       }
       emit(HomePageLoaded(
           liveList: live, upcomingList: upcoming, filter: event.filter));
@@ -47,10 +46,8 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
   }
 }
 
-List<StreamVideoItem> sortLiveList(List<StreamVideoItem> list) => list
-  ..sort((a, b) =>
-      (b.liveStart ?? DateTime.now()).compareTo(a.liveStart ?? DateTime.now()));
+List<StreamVideoItem> retrieveLiveList(List<StreamVideoItem> list) =>
+    list.where((element) => element.status == 'live').toList();
 
-List<StreamVideoItem> sortUpcomingList(List<StreamVideoItem> list) => list
-  ..sort((a, b) => (a.liveSchedule ?? DateTime.now())
-      .compareTo(b.liveSchedule ?? DateTime.now()));
+List<StreamVideoItem> retrieveUpcomingList(List<StreamVideoItem> list) =>
+    list.where((element) => element.status == 'upcoming').toList();

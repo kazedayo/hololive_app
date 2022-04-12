@@ -43,7 +43,7 @@ class VideoCard extends StatelessWidget {
           ),
           child: InkWell(
             onTap: () async {
-              final String url = "https://youtu.be/${item.ytVideoKey}";
+              final String url = "https://youtu.be/${item.id}";
               customUrlLaunch(url);
             },
             child: Column(
@@ -56,7 +56,7 @@ class VideoCard extends StatelessWidget {
                       aspectRatio: 1.78,
                       child: CachedNetworkImage(
                         imageUrl:
-                            "https://img.youtube.com/vi/${item.ytVideoKey}/hqdefault.jpg",
+                            "https://img.youtube.com/vi/${item.id}/hqdefault.jpg",
                         fadeInDuration: const Duration(milliseconds: 200),
                         fit: BoxFit.cover,
                       ),

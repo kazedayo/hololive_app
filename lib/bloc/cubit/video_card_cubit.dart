@@ -12,16 +12,15 @@ class VideoCardCubit extends Cubit<bool> {
   final StreamVideoItem item;
   final Box<String> notiBox;
 
-  VideoCardCubit(this.item, this.notiBox)
-      : super(notiBox.containsKey(item.ytVideoKey));
+  VideoCardCubit(this.item, this.notiBox) : super(notiBox.containsKey(item.id));
 
   void toggleNotification() {
     if (state) {
       NotificationService().cancelScheduledNotification(item: item);
-      notiBox.delete(item.ytVideoKey);
+      notiBox.delete(item.id);
     } else {
       NotificationService().scheduleNotification(item: item);
-      notiBox.put(item.ytVideoKey, item.ytVideoKey);
+      notiBox.put(item.id, item.id);
     }
     emit(!state);
   }

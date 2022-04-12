@@ -8,7 +8,7 @@ An application for your simping needs
 
 ## Credits
 
-Data shamelessly fetched from HoloTools API by dragonjetmkii
+Data shamelessly fetched from Holodex API from Holodex team
 
 This is a fan project and has no affiliation with Cover Corp. and Hololive Production.
 
