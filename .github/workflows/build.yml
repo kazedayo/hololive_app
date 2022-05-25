@@ -105,7 +105,7 @@ jobs:
         with:
           channel: 'stable'
       - run: flutter pub get
-      - run: flutter build ipa --export-options-plist=ExportOptions.plist
+      - run: flutter build ipa
       - name: "Extract IPA Artifact"
         uses: actions/upload-artifact@v1
         with:
