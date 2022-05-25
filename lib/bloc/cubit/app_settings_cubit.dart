@@ -11,7 +11,7 @@ import 'package:hololive_app/models/app_settings/app_settings.dart';
 class AppSettingsCubit extends Cubit<AppSettings> {
   AppSettingsCubit()
       : super(AppSettings(
-            isDarkMode: SchedulerBinding.instance!.window.platformBrightness ==
+            isDarkMode: SchedulerBinding.instance.window.platformBrightness ==
                 Brightness.dark,
             listDisplayMode: ListDisplayMode.card));
 

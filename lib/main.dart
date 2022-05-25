@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) {
-    WidgetsBinding.instance!.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
     return RepositoryProvider(
       create: (context) => HomePageRepository(),
       child: MultiBlocProvider(
