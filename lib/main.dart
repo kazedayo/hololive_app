@@ -74,7 +74,7 @@ class MyApp extends StatelessWidget with WidgetsBindingObserver {
               secondary: Colors.lightBlue[100],
               secondaryContainer: Colors.lightBlueAccent,
             ),
-          ).copyWith(applyElevationOverlayColor: false),
+          ).copyWith(applyElevationOverlayColor: false, useMaterial3: true),
           home: const HomePage(),
         ),
       ),
