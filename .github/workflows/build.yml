@@ -55,8 +55,8 @@ jobs:
         env:
           PLAYSTORE_UPLOAD_KEY: ${{ secrets.PLAYSTORE_UPLOAD_KEY }}
           KEYSTORE_KEY_ALIAS: 'upload'
-          KEYSTORE_KEY_PASSWORD: ${{ secrets.P12_PASSWORD }}
-          KEYSTORE_STORE_PASSWORD: ${{ secrets.P12_PASSWORD }}
+          KEYSTORE_KEY_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
         working-directory: android
       - name: 'Build Android APK and AppBundle'
         uses: subosito/flutter-action@v1
