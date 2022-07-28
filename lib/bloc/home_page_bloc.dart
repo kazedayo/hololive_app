@@ -47,7 +47,8 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
 }
 
 List<StreamVideoItem> retrieveLiveList(List<StreamVideoItem> list) =>
-    list.where((element) => element.status == 'live').toList();
+    list.where((element) => element.status == 'live').toList()
+        ..sort((a, b) => (b.liveStart ?? DateTime.now()).compareTo(a.liveStart ?? DateTime.now()));
 
 List<StreamVideoItem> retrieveUpcomingList(List<StreamVideoItem> list) =>
     list.where((element) => element.status == 'upcoming').toList();

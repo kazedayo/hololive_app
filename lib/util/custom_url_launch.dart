@@ -6,9 +6,9 @@
 import 'package:url_launcher/url_launcher.dart';
 
 void customUrlLaunch(String url) async {
-  final launchNative =
-      await launch(url, forceSafariVC: false, universalLinksOnly: true);
+  final launchNative = await launchUrl(Uri.parse(url),
+      mode: LaunchMode.externalNonBrowserApplication);
   if (!launchNative) {
-    await launch(url, forceSafariVC: true);
+    await launchUrl(Uri.parse(url), mode: LaunchMode.inAppWebView);
   }
 }

@@ -46,7 +46,6 @@ class MyApp extends StatelessWidget with WidgetsBindingObserver {
           )
         ],
         child: MaterialApp(
-          debugShowCheckedModeBanner: false,
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
