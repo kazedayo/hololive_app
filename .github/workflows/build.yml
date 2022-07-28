@@ -35,8 +35,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3.4.1
         with:
           java-version: '12.x'
       # create dotenv file
@@ -59,14 +59,14 @@ jobs:
           KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
         working-directory: android
       - name: 'Build Android APK and AppBundle'
-        uses: subosito/flutter-action@v1
+        uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
       - run: flutter pub get
       - run: flutter build apk
       - run: flutter build appbundle
       - name: "Extract Android APK Artifact"
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: release-apk
           path: build/app/outputs/apk/release/app-release.apk
@@ -79,7 +79,7 @@ jobs:
     name: 'Build iOS IPA'
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       # create dotenv file
       - name: Create env file
         run: |
@@ -101,13 +101,13 @@ jobs:
           api-key-id: ${{ secrets.KEY_ID }}
           api-private-key: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
       - name: "Build iOS IPA"
-        uses: subosito/flutter-action@v1
+        uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
       - run: flutter pub get
       - run: flutter build ipa
       - name: "Extract IPA Artifact"
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3.1.0
         with:
           name: release-ipa
           path: build/ios/ipa/hololive_app.ipa
