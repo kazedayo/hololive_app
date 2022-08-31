@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget with WidgetsBindingObserver {
             ),
           ).copyWith(
             textButtonTheme: TextButtonThemeData(
-              style: TextButton.styleFrom(primary: Colors.blue[400]),
+              style: TextButton.styleFrom(foregroundColor: Colors.blue[400]),
             ),
           ),
           darkTheme: ThemeData.from(

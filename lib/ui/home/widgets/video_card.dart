@@ -117,7 +117,9 @@ class VideoCard extends StatelessWidget {
                               item.channel.name,
                               style: Theme.of(context).textTheme.caption,
                             ),
-                            if (isLive && item.liveViewers != null)
+                            if (isLive &&
+                                (item.liveViewers != null ||
+                                    item.liveViewers != 0))
                               Text(
                                 S.of(context).watching(
                                       NumberFormat.compact()
