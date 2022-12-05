@@ -25,8 +25,8 @@ class NotificationService {
       AndroidNotificationDetails(channelId, appName,
           channelDescription: channelDescription,
           styleInformation: BigTextStyleInformation(''));
-  static const IOSNotificationDetails iosNotificationDetails =
-      IOSNotificationDetails(threadIdentifier: channelId);
+  static const DarwinNotificationDetails iosNotificationDetails =
+      DarwinNotificationDetails(threadIdentifier: channelId);
   static const NotificationDetails notificationDetails = NotificationDetails(
       android: androidNotificationDetails, iOS: iosNotificationDetails);
 
@@ -34,21 +34,22 @@ class NotificationService {
     const AndroidInitializationSettings initializationSettingsAndroid =
         AndroidInitializationSettings('live');
 
-    final IOSInitializationSettings initializationSettingsIOS =
-        IOSInitializationSettings(
+    final DarwinInitializationSettings initializationSettingsDarwin =
+        DarwinInitializationSettings(
       onDidReceiveLocalNotification: onDidReceiveLocalNotification,
     );
 
     final InitializationSettings initializationSettings =
         InitializationSettings(
       android: initializationSettingsAndroid,
-      iOS: initializationSettingsIOS,
+      iOS: initializationSettingsDarwin,
     );
 
     tz.initializeTimeZones();
 
     await flutterLocalNotificationsPlugin.initialize(initializationSettings,
-        onSelectNotification: selectNotification);
+        onDidReceiveNotificationResponse: (details) =>
+            selectNotification(details.payload));
   }
 
   void showNotification({required StreamVideoItem item}) async {
