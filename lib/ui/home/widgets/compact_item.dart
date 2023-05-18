@@ -56,7 +56,7 @@ class CompactItem extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 4),
                 child: Text(
                   item.channel.name,
-                  style: Theme.of(context).textTheme.caption,
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
               trailing: isLive

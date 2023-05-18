@@ -27,7 +27,7 @@ class VideoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Jiffy.locale(Intl.getCurrentLocale());
+    Jiffy.setLocale(Intl.getCurrentLocale());
     return BlocProvider(
       create: (context) => VideoCardCubit(item, notiBox),
       child: BlocBuilder<VideoCardCubit, bool>(
@@ -75,12 +75,18 @@ class VideoCard extends StatelessWidget {
                               ? item.liveStart == null
                                   ? S.of(context).justStarted
                                   : S.of(context).liveTime(
-                                        Jiffy(item.liveStart).fromNow(),
+                                        Jiffy.parseFromDateTime(
+                                                item.liveStart ??
+                                                    DateTime.now())
+                                            .fromNow(),
                                       )
                               : item.liveSchedule == null
                                   ? S.of(context).goingLive
                                   : S.of(context).liveIn(
-                                        Jiffy(item.liveSchedule).fromNow(),
+                                        Jiffy.parseFromDateTime(
+                                                item.liveSchedule ??
+                                                    DateTime.now())
+                                            .fromNow(),
                                       ),
                           style: const TextStyle(color: Colors.white),
                         ),
@@ -115,7 +121,7 @@ class VideoCard extends StatelessWidget {
                             ),
                             Text(
                               item.channel.name,
-                              style: Theme.of(context).textTheme.caption,
+                              style: Theme.of(context).textTheme.bodySmall,
                             ),
                             if (isLive &&
                                 (item.liveViewers != null ||
@@ -127,7 +133,7 @@ class VideoCard extends StatelessWidget {
                                     ),
                                 style: Theme.of(context)
                                     .textTheme
-                                    .caption!
+                                    .bodySmall!
                                     .copyWith(color: Colors.redAccent),
                               ),
                           ],

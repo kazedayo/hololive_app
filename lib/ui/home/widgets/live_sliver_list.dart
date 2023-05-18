@@ -14,7 +14,7 @@ List<Widget>? buildLiveSliverList(
             children: [
               Text(
                 S.of(context).live,
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headlineSmall,
               ),
               Lottie.asset(
                 'assets/pulse.json',
