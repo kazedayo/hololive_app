@@ -35,8 +35,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      - uses: actions/setup-java@v1
+      - uses: actions/checkout@v3.5.2
+      - uses: actions/setup-java@v1.4.4
         with:
           java-version: '17.x'
       # create dotenv file
@@ -59,19 +59,19 @@ jobs:
           KEYSTORE_STORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
         working-directory: android
       - name: 'Build Android APK and AppBundle'
-        uses: subosito/flutter-action@v2
+        uses: subosito/flutter-action@v2.10.0
         with:
           channel: 'stable'
       - run: flutter pub get
       - run: flutter build apk
       - run: flutter build appbundle
       - name: "Extract Android APK Artifact"
-        uses: actions/upload-artifact@v3.1.0
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: release-apk
           path: build/app/outputs/apk/release/app-release.apk
       - name: "Extract Android AppBundle Artifact"
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: release-aab
           path: build/app/outputs/bundle/release/app-release.aab
@@ -79,7 +79,7 @@ jobs:
     name: 'Build iOS IPA'
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.5.2
       # create dotenv file
       - name: Create env file
         run: |
@@ -101,14 +101,14 @@ jobs:
           api-key-id: ${{ secrets.KEY_ID }}
           api-private-key: ${{ secrets.APP_STORE_CONNECT_PRIVATE_KEY }}
       - name: "Build iOS IPA"
-        uses: subosito/flutter-action@v2
+        uses: subosito/flutter-action@v2.10.0
         with:
           channel: 'stable'
           architecture: x64
       - run: flutter pub get
       - run: flutter build ipa
       - name: "Extract IPA Artifact"
-        uses: actions/upload-artifact@v3.1.0
+        uses: actions/upload-artifact@v3.1.2
         with:
           name: release-ipa
           path: build/ios/ipa/*.ipa
