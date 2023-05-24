@@ -111,5 +111,5 @@ jobs:
         uses: actions/upload-artifact@v3.1.0
         with:
           name: release-ipa
-          path: build/ios/ipa/hololive_app.ipa
+          path: build/ios/ipa/*.ipa
       
